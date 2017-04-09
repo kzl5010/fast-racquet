@@ -25,6 +25,10 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+  namespace :api, defaults: {format: :json} do
+  end
+  
+  root "static_pages#root"
 
   # Example resource route with sub-resources:
   #   resources :products do
