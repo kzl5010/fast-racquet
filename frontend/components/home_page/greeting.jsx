@@ -124,10 +124,9 @@ class Greeting extends React.Component {
       <div className="background-img">
       <div className="splash-welcome-container">
         <div className="carousel-text">
-          <h1>Get strung <br/> On your shedule</h1>
-          <Link to="/login" activeClassName="current">Login</Link>
-          &nbsp;or&nbsp;
-          <Link to="/signup" activeClassName="current">Sign up!</Link>
+          <h1>Get strung <br/> On your schedule</h1>
+          <button className="guest-login" onClick={this.loginGuest}>{"Explore as Guest"}</button>
+          {sessionLinks}
         </div>
       </div>
     </div>
