@@ -14,27 +14,6 @@ class Greeting extends React.Component {
     this.loginGuest = this.loginGuest.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps, nextState) {
-  //   // debugger;
-  //   // console.log(nextProps);
-  //   // console.log(nextProps);
-  //   // console.log(this.state.user);
-  //   if (!this.state.user) {
-  //     console.log("ayy11");
-  //     this.setState( {user: nextProps.user} )
-  //     console.log(this.state.user);
-  //     return true;
-  //   }
-  //   // if (this.state.user && nextProps.user !== this.state.user) {
-  //   //   console.log(nextProps);
-  //   //   console.log(nextState);
-  //   //   console.log("ayy");
-  //   //   this.setState( {user: null} )
-  //   //   console.log(this.state.user);
-  //   //   return true;
-  //   // }
-  //   return true;
-  // }
 
   loginGuest(e) {
     e.preventDefault();
@@ -81,10 +60,6 @@ class Greeting extends React.Component {
 
         </hgroup>
         <div className="welcome-instructions">
-        {//<h3> What do you need help with? </h3> TODO add searchbar here
-        }
-        { //Add a task_requests index here
-        }
         <h3>How to get Started</h3>
         <p className="num-icon-content">Taskers love helping</p>
         <ul>
@@ -124,7 +99,8 @@ class Greeting extends React.Component {
       <div className="background-img">
       <div className="splash-welcome-container">
         <div className="carousel-text">
-          <h1>Get strung <br/> On your schedule</h1>
+        <img src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png" alt="logo" className="logo-img"/>        
+          <h1>Quality string jobs to your door for $40.</h1>
           <button className="guest-login" onClick={this.loginGuest}>{"Explore as Guest"}</button>
           {sessionLinks}
         </div>

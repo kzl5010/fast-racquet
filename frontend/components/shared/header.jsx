@@ -25,9 +25,11 @@ class Header extends React.Component {
     if (this.props.currentUser) {
       Nav = (
         <ul className="header-list">
-          <button className="header-button"><Link to="/">Dashboard</Link>
+          <button className="header-button"><Link to="/">Home</Link>
           </button>
-          <button className="header-button"><Link to="/account">Account</Link>
+          <button className="header-button"><Link to="/refer">Refer a friend</Link>
+          </button>
+          <button className="header-button"><Link to="/about">About</Link>
           </button>
 
           <button className="header-button" onClick={this.handleClick}>Log Out</button>
@@ -40,6 +42,12 @@ class Header extends React.Component {
     }else {
       Nav = (
         <ul className="header-list">
+          <button className="header-button"><Link to="/">Home</Link>
+          </button>
+          <button className="header-button"><Link to="/refer">Refer a friend</Link>
+          </button>
+          <button className="header-button"><Link to="/about">About</Link>
+          </button>
           <button className="header-button"><Link to="/login">Log In</Link>
           </button>
           <button className="header-button"><Link to="/signup">Sign Up</Link>
@@ -52,11 +60,11 @@ class Header extends React.Component {
 
     return (
       <header className="header">
+        <p className="header-banner"> Get 50% off your first string job when you &nbsp;
+        <Link to="/signup">sign up</Link>
+        </p>
         <nav className="header-nav">
           <section className="header-logo">
-            <Link to="/">
-              <img src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1486359739/Logomakr_15Wz0G_z63cem.png" alt="logo" className="logo-img"/>
-            </Link>
 {/*
               <Link to="/">
               <h3 className="logo-h3">Home</h3>

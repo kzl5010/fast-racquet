@@ -56,7 +56,8 @@ class SessionForm extends React.Component {
 			return (
 				<div className="login-form-container">
 					<form onSubmit={this.handleSubmit} className="login-form-box">
-				<h1 className="welcome-screen-text">	Get Help Fast  </h1>
+					<img src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png" alt="logo" className="logo-img"/>
+					<h1 className="welcome-screen-text">	Get your racquet fast  </h1>
 						<div className="login-form">
 							<p>
 							Please {this.props.formType} or {this.navLink()}
@@ -97,8 +98,8 @@ class SessionForm extends React.Component {
 			return (
 				<div className="login-form-container">
 					<form onSubmit={this.handleSubmit} className="login-form-box">
-
-					<h1 className="welcome-screen-text">	Get Help Fast  </h1>
+					<img src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png" alt="logo" className="logo-img"/>
+					<h1 className="welcome-screen-text">	Get your racquet fast  </h1>
 						<div className="login-form">
 						<p>
 						Please {this.props.formType} or {this.navLink()}
