@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import LoginModalContainer from './login_modal_container';
 
 class Header extends React.Component {
   constructor(props){
@@ -48,8 +49,7 @@ class Header extends React.Component {
           </button>
           <button className="header-button"><Link to="/about">About</Link>
           </button>
-          <button className="header-button"><Link to="/login">Log In</Link>
-          </button>
+          <LoginModalContainer login={this.props.login} />
           <button className="header-button"><Link to="/signup">Sign Up</Link>
           </button>
           <button className="header-button" onClick={this.loginGuest}>Guest</button>
