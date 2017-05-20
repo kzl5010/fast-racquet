@@ -1,10 +1,10 @@
 import React from 'react';
-import { Modal, Button, Tooltip } from 'react-bootstrap';
+import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix } from 'react-bootstrap';
 
 class LoginModal extends React.Component {
   constructor(props){
     super(props);
-    this.state = { email: "", password: "", first_name: "", last_name: "", showModal: false};
+    this.state = { email: "", password: "", showModal: false};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.open = this.open.bind(this);
@@ -59,11 +59,15 @@ class LoginModal extends React.Component {
       </Button>
 
         <Modal show={this.state.showModal} onHide={this.close}>
-        <form onSubmit={this.handleSubmit} className="login-form-box">
+        <form onSubmit={this.handleSubmit} className="form-horizontal">
         <Modal.Header closeButton>
+        <Col md={12}>
         <img src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png" alt="logo" className="logo-img"/>
+        </Col>
         </Modal.Header>
         <Modal.Body>
+
+        <Col sm={12} lg={12} md={12}>
         <h1 className="welcome-screen-text">	Get your racquet fast  </h1>
           <div className="login-form">
           <p>
@@ -71,22 +75,30 @@ class LoginModal extends React.Component {
           </p>
 
             {this.renderErrors()}
-              <input type="text"
+            <div>
+              <span className="input-group-addon"><i className="fa fa-envelope fa" aria-hidden="true"></i></span>
+
+              <FormControl type="text"
                 value={this.state.email}
                 onChange={this.update("email")}
                 className="login-input" placeholder="Email"/>
-            <br/>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                className="login-input" placeholder="Password"/>
-            <br/>
-            <input type="submit" value="Sign In" />
+            </div>
+            <div>
+              <span className="input-group-addon"><i className="fa fa-lock fa" aria-hidden="true"></i></span>
+
+              <FormControl type="password"
+              value={this.state.password}
+              onChange={this.update("password")}
+              className="login-input" placeholder="Password"/>
+            </div>
+            <Button type="submit" bsSize="medium">Sign in</Button>
           </div>
+          </Col>
+          <Clearfix visibleSmBlock />
           </Modal.Body>
         </form>
         <Modal.Footer>
-          <Button onClick={this.close}>Close</Button>
+          <Button onClick={this.close} bsSize="medium">Close</Button>
         </Modal.Footer>
         </Modal>
       </span>

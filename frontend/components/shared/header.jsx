@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import LoginModalContainer from './login_modal_container';
+import SignupModalContainer from './signup_modal_container';
 
 class Header extends React.Component {
   constructor(props){
@@ -25,7 +26,7 @@ class Header extends React.Component {
     let Nav;
     if (this.props.currentUser) {
       Nav = (
-        <ul className="header-list">
+        <div className="header-list">
           <button className="header-button"><Link to="/">Home</Link>
           </button>
           <button className="header-button"><Link to="/refer">Refer a friend</Link>
@@ -38,31 +39,35 @@ class Header extends React.Component {
 //        <li className="header-list-item"><Link to="/taskers">Taskers</Link></li>
         }
 
-        </ul>
+        </div>
       );
-    }else {
+    }
+    else {
       Nav = (
-        <ul className="header-list">
+        <div className="header-list">
+          <div className="signup-deal">
+            <p className="header-banner"> Get 50% off your first string job when you
+            <SignupModalContainer />
+            </p>
+          </div>
           <button className="header-button"><Link to="/">Home</Link>
           </button>
           <button className="header-button"><Link to="/refer">Refer a friend</Link>
           </button>
           <button className="header-button"><Link to="/about">About</Link>
           </button>
-          <LoginModalContainer login={this.props.login} />
-          <button className="header-button"><Link to="/signup">Sign Up</Link>
-          </button>
+          <LoginModalContainer />
+          {
+          //<SignupModalContainer />
+          }
           <button className="header-button" onClick={this.loginGuest}>Guest</button>
 
-        </ul>
+        </div>
       );
     }
 
     return (
       <header className="header">
-        <p className="header-banner"> Get 50% off your first string job when you &nbsp;
-        <Link to="/signup">sign up</Link>
-        </p>
         <nav className="header-nav">
           <section className="header-logo">
 {/*
