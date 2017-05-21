@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix } from 'react-bootstrap';
+import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
 
 class LoginModal extends React.Component {
   constructor(props){
@@ -59,7 +59,6 @@ class LoginModal extends React.Component {
       </Button>
 
         <Modal show={this.state.showModal} onHide={this.close}>
-        <form onSubmit={this.handleSubmit} className="form-horizontal">
         <Modal.Header closeButton>
         <Col md={12}>
         <img src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png" alt="logo" className="logo-img"/>
@@ -67,36 +66,39 @@ class LoginModal extends React.Component {
         </Modal.Header>
         <Modal.Body>
 
-        <Col sm={12} lg={12} md={12}>
         <h1 className="welcome-screen-text">	Get your racquet fast  </h1>
+        <form onSubmit={this.handleSubmit} className="form-horizontal">
           <div className="login-form">
           <p>
           Please Login
           </p>
 
             {this.renderErrors()}
-            <div>
-              <span className="input-group-addon"><i className="fa fa-envelope fa" aria-hidden="true"></i></span>
-
+            <InputGroup>
+              <InputGroup.Addon>
+              <i className="fa fa-envelope fa-fw" aria-hidden="true"></i>
+              </InputGroup.Addon>
               <FormControl type="text"
                 value={this.state.email}
                 onChange={this.update("email")}
                 className="login-input" placeholder="Email"/>
-            </div>
-            <div>
-              <span className="input-group-addon"><i className="fa fa-lock fa" aria-hidden="true"></i></span>
-
+            </InputGroup>
+            <InputGroup>
+              <InputGroup.Addon>
+                <i className="fa fa-lock fa-fw" aria-hidden="true"></i>
+              </InputGroup.Addon>
               <FormControl type="password"
               value={this.state.password}
               onChange={this.update("password")}
               className="login-input" placeholder="Password"/>
-            </div>
+            </InputGroup>
             <Button type="submit" bsSize="medium">Sign in</Button>
+
           </div>
-          </Col>
-          <Clearfix visibleSmBlock />
+          </form>
           </Modal.Body>
-        </form>
+
+          <Clearfix visibleSmBlock />
         <Modal.Footer>
           <Button onClick={this.close} bsSize="medium">Close</Button>
         </Modal.Footer>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import { login } from '../../actions/session_actions';
+import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix } from 'react-bootstrap';
+
 
 class Greeting extends React.Component {
   constructor(props){
@@ -99,10 +101,11 @@ class Greeting extends React.Component {
       <div className="background-img">
       <div className="splash-welcome-container">
         <div className="carousel-text">
-        <img src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png" alt="logo" className="logo-img"/>        
+        <img src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png" alt="logo" className="logo-img"/>
           <h1>Quality string jobs to your door for $40.</h1>
           <button className="guest-login" onClick={this.loginGuest}>{"Explore as Guest"}</button>
-          {sessionLinks}
+          {//sessionLinks
+          }
         </div>
       </div>
     </div>
