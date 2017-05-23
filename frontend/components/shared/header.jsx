@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import LoginModalContainer from './login_modal_container';
 import SignupModalContainer from './signup_modal_container';
+import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Grid, Row } from 'react-bootstrap';
 
 class Header extends React.Component {
   constructor(props){
@@ -27,12 +28,12 @@ class Header extends React.Component {
     if (this.props.currentUser) {
       Nav = (
         <div className="header-list">
-          <button className="header-button"><Link to="/">Home</Link>
-          </button>
-          <button className="header-button"><Link to="/refer">Refer a friend</Link>
-          </button>
-          <button className="header-button"><Link to="/about">About</Link>
-          </button>
+          <Button className="header-button"><Link to="/">Home</Link>
+          </Button>
+          <Button className="header-button"><Link to="/refer">Refer a friend</Link>
+          </Button>
+          <Button className="header-button"><Link to="/about">About</Link>
+          </Button>
 
           <button className="header-button" onClick={this.handleClick}>Log Out</button>
         {//    <button className="header-button" onClick={logout}>Log Out</button>
@@ -46,16 +47,16 @@ class Header extends React.Component {
       Nav = (
         <div className="header-list">
           <div className="signup-deal">
-            <p className="header-banner"> Get 50% off your first string job when you
+            <Col className="text-center signup-promo"> Get 50% off your first string job when you
             <SignupModalContainer />
-            </p>
+            </Col>
           </div>
-          <button className="header-button"><Link to="/">Home</Link>
-          </button>
-          <button className="header-button"><Link to="/refer">Refer a friend</Link>
-          </button>
-          <button className="header-button"><Link to="/about">About</Link>
-          </button>
+          <Button className="header-button"><Link to="/">Home</Link>
+          </Button>
+          <Button className="header-button"><Link to="/refer">Refer a friend</Link>
+          </Button>
+          <Button className="header-button"><Link to="/about">About</Link>
+          </Button>
           <LoginModalContainer />
           {
           //<SignupModalContainer />

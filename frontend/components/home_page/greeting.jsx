@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import { login } from '../../actions/session_actions';
-import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix } from 'react-bootstrap';
+import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Grid, Row } from 'react-bootstrap';
 
 
 class Greeting extends React.Component {
@@ -21,26 +21,11 @@ class Greeting extends React.Component {
     e.preventDefault();
     const guest = {email: "fakeaccount@gmail.com", password :"password"}
     this.props.login({user: guest});
-    // this.props.login({guest});
-    // this.props.login(guest);
-    // this.setState({user: guest});
-    // debugger;
     console.log({guest});
   }
 
   render() {
-    const styles = {
-      dots: false,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 4000,
-      speed: 1500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      adaptiveHeight: true,
-      arrows: false,
-      fade: true
-    };
+
 
     const sessionLinks = (
       <nav className="login-signup">
@@ -100,13 +85,39 @@ class Greeting extends React.Component {
     <div className="splash-div">
       <div className="background-img">
       <div className="splash-welcome-container">
-        <div className="carousel-text">
         <img src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png" alt="logo" className="logo-img"/>
           <h1>Quality string jobs to your door for $40.</h1>
           <button className="guest-login" onClick={this.loginGuest}>{"Explore as Guest"}</button>
           {//sessionLinks
           }
-        </div>
+          <Grid>
+          <Col className="text-center">
+          <h2>How's it work?</h2>
+          </Col>
+          <Row className="show-grid">
+          <Col lg={4} md={4}>
+          <div className='number-icon'>1</div>
+          <div className='content'>
+          <h3 className="header-i">Send us your racquet</h3>
+          <p className="num-icon-content">Print out the packaging slip and mail your racquet to us. We pay for shipping!</p>
+          </div>
+          </Col>
+          <Col lg={4} md={4}>
+          <div className='number-icon'>2</div>
+          <div className='content'>
+          <h3 className="header-i">Take a break</h3>
+          <p className="num-icon-content">Sit tight while one of our industry leading technicians strings your racquet</p>
+          </div>
+          </Col>
+          <Col lg={4} md={4}>
+          <div className='number-icon'>3</div>
+          <div className='content'>
+          <h3 className="header-i">Thwack!</h3>
+          <p className="num-icon-content">Your freshly strung racquet will arrive in a few days, ready for the court</p>
+          </div>
+          </Col>
+          </Row>
+          </Grid>
       </div>
     </div>
     </div>
