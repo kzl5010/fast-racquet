@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates :password, length: { minimum: 6, allow_nil: true }
+  has_many :orders 
   after_initialize :ensure_session_token
 
   def password=(password)
