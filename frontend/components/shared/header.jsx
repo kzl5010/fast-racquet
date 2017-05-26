@@ -25,9 +25,14 @@ class Header extends React.Component {
 
   render() {
     let Nav;
+    let deal = null;
+    if (this.props.currentUser.first_buy) {
+      deal = (<Row>Your 50% off will be applied at checkout</Row>);
+    }
     if (this.props.currentUser) {
       Nav = (
         <div className="header-list">
+          {deal}
           <Button className="header-button"><Link to="/">Home</Link>
           </Button>
           <Button className="header-button"><Link to="/refer">Refer a friend</Link>
@@ -47,9 +52,9 @@ class Header extends React.Component {
       Nav = (
         <div className="header-list">
           <div className="signup-deal">
-            <Col className="text-center signup-promo"> Get 50% off your first string job when you
+            <Row className="text-center signup-promo"> Get 50% off your first string job when you
             <SignupModalContainer />
-            </Col>
+            </Row>
           </div>
           <Button className="header-button"><Link to="/">Home</Link>
           </Button>

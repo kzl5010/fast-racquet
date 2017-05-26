@@ -14,11 +14,11 @@ export const fetchStringies = () => dispatch => (
 );
 
 const receiveStringy = stringy => ({
-  type: RECEIVE_TASK,
+  type: RECEIVE_STRINGY,
   stringy
 });
 
 const receiveStringies = stringies => ({
-  type: RECEIVE_TASKS,
+  type: RECEIVE_STRINGIES,
   stringies
 });

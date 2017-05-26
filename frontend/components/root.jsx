@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import SessionFormContainer from './session_form/session_form_container';
 import GreetingContainer from './home_page/greeting_container';
+import OrderFormContainer from './order/order_form_container'; 
 
 import App from './app';
 
@@ -32,6 +33,7 @@ const Root = ({ store }) => {
           <IndexRoute component={GreetingContainer} />
           <Route path="login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
+          <Route path="order" component={OrderFormContainer} onEnter={_ensureLoggedIn} />
         </Route>
       </Router>
     </Provider>

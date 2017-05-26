@@ -41,21 +41,21 @@ export const deleteOrder = id => dispatch => (
 );
 
 const receiveOrder = order => ({
-  type: RECEIVE_TASK_REQUEST,
+  type: RECEIVE_ORDER,
   order
 });
 
 const receiveOrders = orders => ({
-  type: RECEIVE_TASK_REQUESTS,
+  type: RECEIVE_ORDERS,
   orders
 });
 
 const removeOrder = order => ({
-  type: REMOVE_TASK_REQUEST,
+  type: REMOVE_ORDER,
   order
 });
 
 const receiveOrderErrors = errors => ({
-  type: RECEIVE_TASK_REQUEST_ERRORS,
+  type: RECEIVE_ORDER_ERRORS,
   errors
 });
