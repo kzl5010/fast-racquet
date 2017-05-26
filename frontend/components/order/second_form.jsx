@@ -14,9 +14,7 @@ class SecondForm extends React.Component {
       errors: null
     };
     this.handleChange = this.handleChange.bind(this);
-    this.changeDate = this.changeDate.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.updateTasker = this.updateTasker.bind(this);
   }
 
   handleChange(field) {

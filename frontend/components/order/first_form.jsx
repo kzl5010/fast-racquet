@@ -10,26 +10,13 @@ class FirstForm extends React.Component {
       stringy_id: null,
       address: ""
     };
+    console.log(this.props.stringies);
     this.stringlist = ""
     this.onChange = (address) => this.setState({ address });
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.updateTasker = this.updateTasker.bind(this);
     this.stringTypes = ["Synthetic gut", "Polyester", "Multifilament", "Hybrid", "Provide your own string"]
   }
 
-  componentDidMount() {
-    this.stringlist = (<Col>
-      this.stringTypes.map((stringType) => {
-        <Col>stringType
-        {this.props.stringies.map((stringy) => {
-          if (stringy.typeof == stringType) {
-              return (<Row>stringy.description</Row>)
-          }
-        })}
-        </Col>
-      })
-      </Col>)
-  }
 
   handleChange(field) {
     return e => {
@@ -67,7 +54,19 @@ class FirstForm extends React.Component {
   render() {
 
     // const AutocompleteItem = ({ suggestion }) => (<div><i className="fa fa-map-marker"/>{suggestion}</div>)
-
+    if (this.props.stringies) {
+      this.stringlist = (<Col>
+        {this.stringTypes.map((stringType) => {
+          <Col>stringType
+          {this.props.stringies.map((stringy) => {
+            if (stringy.typeof == stringType) {
+                return (<Row>stringy.description</Row>)
+            }
+          })}
+          </Col>
+        })}
+        </Col>)
+    }
     let stringOptions = null
     // if (this.props.tasks) {
     //   taskOptions = this.props.tasks.map((task, i) => (

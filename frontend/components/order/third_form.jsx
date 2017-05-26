@@ -11,7 +11,7 @@ class ThirdForm extends React.Component {
       stringy_id: this.props.stringy_id,
       address: this.props.address,
       tension: this.props.tension,
-      date: this.props.date,
+      // date: this.props.date,
       price: this.props.price
     };
 
@@ -33,7 +33,6 @@ class ThirdForm extends React.Component {
 
       <div className='third-form'>
         <h1> Are these details correct? </h1>
-        <p>String <br/><strong>{this.props.stringies[this.props.stringy_id-1].description}</strong></p>
         <p>Tension <br/><strong>{this.props.tension}</strong></p>
         <p>Place <br/><strong>{this.props.address}</strong></p>
         <p>Instruction <br/><strong>{this.props.instructions}</strong></p>

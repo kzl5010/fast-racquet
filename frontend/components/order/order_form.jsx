@@ -5,9 +5,9 @@ import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, Inp
 
 // import DatePicker from 'react-datepicker';
 // import TaskerIndexContainer from '../tasker/tasker_index_container';
-// import FirstForm from './first_form';
-// import SecondForm from './second_form';
-// import ThirdForm from './third_form';
+import FirstForm from './first_form';
+import SecondForm from './second_form';
+import ThirdForm from './third_form';
 // import { hashHistory } from 'react-router'
 
 class OrderForm extends React.Component {
@@ -22,7 +22,7 @@ class OrderForm extends React.Component {
       // address: "",
       price: "40.00",
       form: {
-        stringy_id: null,
+        stringy_id: "1",
         address: null
       },
       form2: {
@@ -37,10 +37,10 @@ class OrderForm extends React.Component {
     this.changeDate = this.changeDate.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.updateTasker = this.updateTasker.bind(this);
     this.updateForm = this.updateForm.bind(this);
     this.updateForm2 = this.updateForm2.bind(this);
     this.nextStage = this.nextStage.bind(this);
+    console.log(this.state);
   }
 
   formComplete() {
@@ -109,13 +109,22 @@ class OrderForm extends React.Component {
     }
   }
 
-  // componentDidMount() {
-  //   this.props.fetchStringies();
-  //   // this.props.fetchTaskers();
-  // }
+  componentDidMount() {
+    this.props.fetchStringies();
+    // this.props.fetchTaskers();
+  }
 
   componentWillMount() {
+    // let that = this;
+    // let p1 = new Promise(
+    //   (resolve, reject) => {
+    //     that.props.fetchStringies()
+    //   }
+    // )
     this.props.fetchStringies();
+    console.log(this.props)
+    let stringies = ""
+    window.setTimeout(this.setState({stringies: stringies}), 500);
   }
 
   updateForm(obj) {
@@ -179,13 +188,13 @@ class OrderForm extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     let stringies;
     if (this.props.stringies) {
          stringies = this.props.stringies.map((stringy, i)=>(
         <option key={i} value={stringy.id}>{stringy.description}</option>
       ));
     }
-    console.log(stringies);
 
 
     let stage;
@@ -194,10 +203,9 @@ class OrderForm extends React.Component {
     } else if (this.state.stage === 2) {
       stage = <SecondForm nextStage={this.nextStage} updateForm={this.updateForm2} stringies={this.props.stringies}/>
     } else {
-      stage = <ThirdForm nextStage={this.nextStage} details={this.state.form.details} submit={this.handleSubmit}
-      task_id={this.state.form.task_id} address={this.state.form.address} tasker_id={this.state.form2.tasker_id}
-      taskers={this.props.taskers.taskers} date={this.state.form2.date} hours={this.state.form2.hours}
-      tasks={this.props.tasks.tasks}/>
+      stage = <ThirdForm nextStage={this.nextStage} price={this.state.price} submit={this.handleSubmit}
+      instructions={this.state.form2.instructions} tension={this.state.form2.tension} stringy_id={this.state.form.stringy_id}
+      address={"this.props.form.address"} stringies={this.props.stringies}/>
     }
 
     return (
