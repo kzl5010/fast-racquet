@@ -54,11 +54,11 @@ class SecondForm extends React.Component {
               </InputGroup>
               <Col>Any special instructions?</Col>
               <InputGroup>
-                <FormControl type="textarea" value={this.state.instructions} placeholder=""
+                <FormControl type="textarea" value={this.state.instructions} placeholder="Optional"
                 onChange={this.handleChange("instructions")}/>
               </InputGroup>
-              <button className="submit" type="submit" value="Save">Save
-              </button>
+              <Button disabled={!this.state.tension} className="submit" type="submit" value="Save">Save
+              </Button>
           </form>
     );
   }

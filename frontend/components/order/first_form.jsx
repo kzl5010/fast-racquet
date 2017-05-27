@@ -8,12 +8,15 @@ class FirstForm extends React.Component {
     super(props);
     this.state = {
       stringy_id: null,
-      address: ""
+      address: "",
+      editing: "-1"
     };
     console.log(this.props.stringies);
     this.stringlist = ""
     this.onChange = (address) => this.setState({ address });
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.setEdit = this.setEdit.bind(this);
+    this.setString = this.setString.bind(this);
     this.stringTypes = ["Synthetic gut", "Polyester", "Multifilament", "Hybrid", "Provide your own string"]
   }
 
@@ -25,6 +28,23 @@ class FirstForm extends React.Component {
     }
   }
 
+  setString(e) {
+    e.preventDefault();
+    this.setState({stringy_id: e.target.id})
+    this.props.updateForm(this.state);
+  }
+
+  setEdit(e) {
+    e.preventDefault();
+    console.log(e.target)
+    if (!e.target.className.includes("sub-button")) {
+      this.setState({editing: e.target.id})
+      if (e.target.id == 4) {
+        this.setState({stringy_id: e.target.id})
+        this.props.updateForm(this.state);
+      }
+    }
+  }
 
   nextForm(e) {
     e.preventDefault();
@@ -54,20 +74,22 @@ class FirstForm extends React.Component {
   render() {
 
     // const AutocompleteItem = ({ suggestion }) => (<div><i className="fa fa-map-marker"/>{suggestion}</div>)
+    let that = this;
     if (this.props.stringies) {
-      this.stringlist = (<Col>
-        {this.stringTypes.map((stringType) => {
-          <Col>stringType
-          {this.props.stringies.map((stringy) => {
-            if (stringy.typeof == stringType) {
-                return (<Row>stringy.description</Row>)
-            }
-          })}
-          </Col>
+      that.stringList = (<Row>
+        {that.stringTypes.map((stringType, idx1) => {
+          return (<Col lg={12} md={12}><Button onClick={this.setEdit} key={idx1} id={idx1}>{stringType}
+            {this.props.stringies.map((stringy, idx) => {
+              if (stringy.typeof == stringType && this.state.editing == idx1) {
+                  return (<Button className="sub-button" onClick={this.setString} id={idx} key={idx}>{stringy.description}</Button>)
+              }
+            })}
+          </Button></Col>)
         })}
-        </Col>)
+        </Row>)
     }
     let stringOptions = null
+    // console.log(that.stringList);
     // if (this.props.tasks) {
     //   taskOptions = this.props.tasks.map((task, i) => (
     //     <option key={i} value={task.id}>{task.title}</option>
@@ -78,9 +100,9 @@ class FirstForm extends React.Component {
           <h4>What kind of string do you need?</h4>
             <div id="alert">{  this.renderErrors()   } </div>
             {this.stringList}
-            <button className="submit" type="submit" value="Save">Save</button>
+            <Button className="submit" type="submit" value="Save" disabled={!this.state.stringy_id}>Save</Button>
       </form>
-    );
+    )
   }
 }
 

@@ -1,14 +1,14 @@
 import React from 'react';
 // import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete';
 import moment from 'moment';
-import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
+import { Grid, Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
 
 // import DatePicker from 'react-datepicker';
 // import TaskerIndexContainer from '../tasker/tasker_index_container';
 import FirstForm from './first_form';
 import SecondForm from './second_form';
 import ThirdForm from './third_form';
-// import { hashHistory } from 'react-router'
+import { hashHistory } from 'react-router'
 
 class OrderForm extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class OrderForm extends React.Component {
       // address: "",
       price: "40.00",
       form: {
-        stringy_id: "1",
+        stringy_id: null,
         address: null
       },
       form2: {
@@ -40,7 +40,6 @@ class OrderForm extends React.Component {
     this.updateForm = this.updateForm.bind(this);
     this.updateForm2 = this.updateForm2.bind(this);
     this.nextStage = this.nextStage.bind(this);
-    console.log(this.state);
   }
 
   formComplete() {
@@ -104,7 +103,7 @@ class OrderForm extends React.Component {
       order.zip_code = "Fake";
       // console.log(taskRequest);
       // taskRequest.task_id = this.props.params.taskId;
-      this.props.createOrder(order);
+      this.props.createOrder({order});
       hashHistory.push("/")
     }
   }
@@ -115,16 +114,7 @@ class OrderForm extends React.Component {
   }
 
   componentWillMount() {
-    // let that = this;
-    // let p1 = new Promise(
-    //   (resolve, reject) => {
-    //     that.props.fetchStringies()
-    //   }
-    // )
     this.props.fetchStringies();
-    console.log(this.props)
-    let stringies = ""
-    window.setTimeout(this.setState({stringies: stringies}), 500);
   }
 
   updateForm(obj) {
@@ -152,14 +142,14 @@ class OrderForm extends React.Component {
     let order = this.state;
     order.price = this.state.price + this.props.stringies[this.state.stringy_id-1].price;
     order.stringy_id = this.state.form.stringy_id;
+    //this.state.form.stringy_id;
     order.tension = this.state.form2.tension;
     order.instructions = this.state.form2.instructions;
-    order.details = this.state.form.details;
     order.address_line_one = "Test";
     order.city = "Test1";
     order.state = "NJ";
     order.zip_code = "Fake";
-    this.props.createOrder(order);
+    this.props.createOrder({order});
     // this.setState({
     //   address: "",
     //   tasker_id: "",
@@ -188,8 +178,10 @@ class OrderForm extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     let stringies;
+    if (!this.props.stringies){
+      return (<div>Hi</div>)
+    }
     if (this.props.stringies) {
          stringies = this.props.stringies.map((stringy, i)=>(
         <option key={i} value={stringy.id}>{stringy.description}</option>
@@ -213,11 +205,13 @@ class OrderForm extends React.Component {
         <div id="alert"></div> { //TODO FIX THIS??? ERRORS
         }
         <nav className='stage-header'>
-          <ul className='stage-items-group'>
-            <li id='1' className='stage-active'><strong>1.</strong>Pick your string <b>></b></li>
-            <li id='2'><strong>2.</strong>Set your tension ></li>
-            <li id='3'><strong>3.</strong> Place order</li>
-          </ul>
+        <Grid>
+          <Row className='show-grid'>
+            <Col lg={4} md={4} id='1' className='text-center stage-active'><div>Pick your string </div></Col>
+            <Col lg={4} md={4} className="text-center" id='2'><div>Set your tension</div></Col>
+            <Col lg={4} md={4} className="text-center" id='3'> Place order</Col>
+          </Row>
+        </Grid>
         </nav>
         <div className="booking-form">
           <p className="missing-fields">{this.missingFields}</p>

@@ -26,10 +26,11 @@ class Header extends React.Component {
   render() {
     let Nav;
     let deal = null;
-    if (this.props.currentUser.first_buy) {
-      deal = (<Row>Your 50% off will be applied at checkout</Row>);
-    }
+
     if (this.props.currentUser) {
+      if (this.props.currentUser.first_buy) {
+        deal = (<Col lg={12} md={12} className="text-center">Your 50% off will be applied at checkout</Col>);
+      }
       Nav = (
         <div className="header-list">
           {deal}

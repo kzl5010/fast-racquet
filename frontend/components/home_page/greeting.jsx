@@ -48,6 +48,7 @@ class Greeting extends React.Component {
         </hgroup>
         <div className="welcome-instructions">
         <h3>How to get Started</h3>
+        <Button className="order-button"><Link to="/order">Get your racquet Strung</Link></Button>
         <p className="num-icon-content">Taskers love helping</p>
         <ul>
         <li>
@@ -87,6 +88,8 @@ class Greeting extends React.Component {
       <div className="splash-welcome-container">
         <img src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png" alt="logo" className="logo-img"/>
           <h1>Quality string jobs to your door for $40.</h1>
+          <Button className="order-button"><Link to="/order">Get your racquet Strung</Link></Button>
+
           <button className="guest-login" onClick={this.loginGuest}>{"Explore as Guest"}</button>
           {//sessionLinks
           }

@@ -33,6 +33,7 @@ class ThirdForm extends React.Component {
 
       <div className='third-form'>
         <h1> Are these details correct? </h1>
+        <p>Stringy{this.props.stringy_id}</p>
         <p>Tension <br/><strong>{this.props.tension}</strong></p>
         <p>Place <br/><strong>{this.props.address}</strong></p>
         <p>Instruction <br/><strong>{this.props.instructions}</strong></p>
