@@ -34,14 +34,17 @@ class Header extends React.Component {
       Nav = (
         <div className="header-list">
           {deal}
-          <Button className="header-button"><Link to="/">Home</Link>
+          <Row>
+          <Col lg={12} md={12} sm={12}>
+          <Button bsStyle="link" className="header-button"><Link to="/">Home</Link>
           </Button>
-          <Button className="header-button"><Link to="/refer">Refer a friend</Link>
+          <Button bsStyle="link" className="header-button"><Link to="/refer">Refer a friend</Link>
           </Button>
-          <Button className="header-button"><Link to="/about">About</Link>
+          <Button bsStyle="link" className="header-button"><Link to="/about">About</Link>
           </Button>
-
-          <button className="header-button" onClick={this.handleClick}>Log Out</button>
+          <Button bsStyle="link" className="header-button pull-right" onClick={this.handleClick}>Log Out</Button>
+          </Col>
+          </Row>
         {//    <button className="header-button" onClick={logout}>Log Out</button>
 //        <li className="header-list-item"><Link to="/taskers">Taskers</Link></li>
         }
@@ -53,22 +56,26 @@ class Header extends React.Component {
       Nav = (
         <div className="header-list">
           <div className="signup-deal">
-            <Row className="text-center signup-promo"> Get 50% off your first string job when you
+            <Row className="text-center signup-promo"> Get 50% off your first string job when you&nbsp;
             <SignupModalContainer />
             </Row>
           </div>
-          <Button className="header-button"><Link to="/">Home</Link>
+          <Row>
+          <Col lg={12} md={12} sm={12}>
+          <Button bsStyle="link" className="header-button"><Link to="/">Home</Link>
           </Button>
-          <Button className="header-button"><Link to="/refer">Refer a friend</Link>
+          <Button bsStyle="link" className="header-button"><Link to="/refer">Refer a friend</Link>
           </Button>
-          <Button className="header-button"><Link to="/about">About</Link>
+          <Button bsStyle="link" className="header-button"><Link to="/about">About</Link>
           </Button>
           <LoginModalContainer />
+          </Col>
+          </Row>
           {
           //<SignupModalContainer />
           }
-          <button className="header-button" onClick={this.loginGuest}>Guest</button>
-
+          {//            <button className="header-button" onClick={this.loginGuest}>Guest</button>
+          }
         </div>
       );
     }

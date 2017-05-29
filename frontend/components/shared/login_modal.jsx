@@ -51,7 +51,7 @@ class LoginModal extends React.Component {
     );
     return (
       <span className="login-form-container">
-      <Button
+      <Button className="pull-right"
         bsStyle="link"
         bsSize="medium"
         onClick={this.open}

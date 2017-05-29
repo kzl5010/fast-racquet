@@ -18,3 +18,4 @@ Stringy.create({typeof: "Multifilament", price: "5.90", description: "Alpha Gut 
 Stringy.create({typeof: "Hybrid", price: "0.00", description: "Gosen OG Sheep Micro 16 Natural"})
 Stringy.create({typeof: "Hybrid", price: "4.75", description: "Prince Synthetic Gut 16 Duraflex White"})
 Stringy.create({typeof: "Hybrid", price: "5.90", description: "Alpha Gut 2000 17 String Natural"})
+Stringy.create({typeof: "Custom", price: "0.00", description: "Your personal choice"})

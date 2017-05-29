@@ -95,7 +95,7 @@ class Greeting extends React.Component {
           }
           <Grid>
           <Col className="text-center">
-          <h2>How's it work?</h2>
+          <h2 className="welcome-instructions">How it works</h2>
           </Col>
           <Row className="show-grid">
           <Col lg={4} md={4}>

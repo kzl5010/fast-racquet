@@ -55,7 +55,7 @@ class SignupModal extends React.Component {
         bsStyle="link"
         bsSize="medium"
         onClick={this.open}
-      >Sign up
+      >sign up
       </Button>
 
         <Modal show={this.state.showModal} onHide={this.close}>

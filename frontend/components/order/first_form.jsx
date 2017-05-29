@@ -30,8 +30,8 @@ class FirstForm extends React.Component {
 
   setString(e) {
     e.preventDefault();
-    this.setState({stringy_id: e.target.id})
-    this.props.updateForm(this.state);
+    this.props.updateForm({stringy_id: e.target.id+1});
+    this.setState({stringy_id: e.target.id+1});
   }
 
   setEdit(e) {
@@ -40,7 +40,7 @@ class FirstForm extends React.Component {
     if (!e.target.className.includes("sub-button")) {
       this.setState({editing: e.target.id})
       if (e.target.id == 4) {
-        this.setState({stringy_id: e.target.id})
+        this.setState({stringy_id: 13})
         this.props.updateForm(this.state);
       }
     }

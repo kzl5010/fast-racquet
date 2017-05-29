@@ -15,9 +15,9 @@ class OrderForm extends React.Component {
     super(props);
     this.state = {
       stage: 1,
-      user_id: this.props.currentUser.id,
-      first_name: this.props.currentUser.first_name,
-      last_name: this.props.currentUser.last_name,
+      user_id: "placeholder",
+      first_name: "placeholder",
+      last_name: "placeholder",
       // task_id: this.props.params.taskId,
       // address: "",
       price: "40.00",
