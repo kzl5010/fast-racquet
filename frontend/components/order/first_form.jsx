@@ -17,7 +17,8 @@ class FirstForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setEdit = this.setEdit.bind(this);
     this.setString = this.setString.bind(this);
-    this.stringTypes = ["Synthetic gut", "Polyester", "Multifilament", "Hybrid", "Provide your own string"]
+    this.stringTypes = ["Synthetic gut", "Polyester", "Multifilament", "Hybrid", "Provide your own string"];
+    this.stringDescriptions = [];
   }
 
 
@@ -30,8 +31,8 @@ class FirstForm extends React.Component {
 
   setString(e) {
     e.preventDefault();
-    this.props.updateForm({stringy_id: e.target.id+1});
-    this.setState({stringy_id: e.target.id+1});
+    this.props.updateForm({stringy_id: parseInt(e.target.id)+1});
+    this.setState({stringy_id: parseInt(e.target.id)+1});
   }
 
   setEdit(e) {
@@ -40,8 +41,8 @@ class FirstForm extends React.Component {
     if (!e.target.className.includes("sub-button")) {
       this.setState({editing: e.target.id})
       if (e.target.id == 4) {
+        this.props.updateForm({stringy_id: 13});
         this.setState({stringy_id: 13})
-        this.props.updateForm(this.state);
       }
     }
   }

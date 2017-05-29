@@ -40,40 +40,49 @@ class Greeting extends React.Component {
         <section className="greeting">
         <hgroup className="greeting-group">
         <div className="first-line-greeting">
+        <img src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png" alt="logo" className="logo-img"/>
         <h2 className="greeting-name">Welcome to Fast Racquet, {this.props.currentUser.first_name}!</h2>
         </div>
 {//        <Link to="/task_request" activeClassName="make_tr">Request a Task!</Link>
 }
 
         </hgroup>
-        <div className="welcome-instructions">
-        <h3>How to get Started</h3>
         <Button className="order-button"><Link to="/order">Get your racquet Strung</Link></Button>
-        <p className="num-icon-content">Taskers love helping</p>
-        <ul>
-        <li>
-        <div className='number-icon'>1</div>
-        <div className='content'>
-        <h3 className="header-i">Pick a Task</h3>
-        <p className="num-icon-content">Choose a task from a list of available jobs</p>
+
+        <Grid>
+        <Col className="text-center">
+        <h2 className="welcome-instructions">How it works</h2>
+        </Col>
+        <Row className="show-grid">
+        <Col lg={4} md={4}>
+        <div className="text-center">
+        <i className="fa fa-truck fa-5x imgstruction" aria-hidden="true"></i>
         </div>
-        </li>
-        <li>
-        <div className='number-icon'>2</div>
-        <div className='content'>
-        <h3 className="header-i">Pick a Tasker</h3>
-        <p className="num-icon-content">Select a Tasker that suits your unique needs</p>
+        <div className='content text-center'>
+        <h3 className="header-i text-center">Send us your racquet</h3>
+        <p className="num-icon-content">Print out the packaging slip and mail your racquet to us. We pay for shipping!</p>
         </div>
-        </li>
-        <li>
-        <div className='number-icon'>3</div>
-        <div className='content'>
-        <h3 className="header-i">Get it Done</h3>
-        <p className="num-icon-content">Your Tasker puts in the work and ideally gets paid™</p>
+        </Col>
+        <Col lg={4} md={4}>
+        <div className="text-center">
+        <i className="fa fa-bed fa-5x imgstruction" aria-hidden="true"></i>
         </div>
-        </li>
-        </ul>
+        <div className='content text-center'>
+        <h3 className="header-i">Take a break</h3>
+        <p className="num-icon-content">Sit tight while one of our industry leading technicians strings your racquet</p>
         </div>
+        </Col>
+        <Col lg={4} md={4}>
+        <div className="text-center">
+        <i className="fa fa-dribbble fa-5x imgstruction" aria-hidden="true"></i>
+        </div>
+        <div className='content text-center'>
+        <h3 className="header-i">Thwack!</h3>
+        <p className="num-icon-content">Your freshly strung racquet will arrive in a few days, ready for the court</p>
+        </div>
+        </Col>
+        </Row>
+        </Grid>
 
         </section>
       );
@@ -84,6 +93,8 @@ class Greeting extends React.Component {
     const unloggedGreeting = (
 
     <div className="splash-div">
+    { //Make this jumbotron, possibly move Nav links here for backgroundn img
+    }
       <div className="background-img">
       <div className="splash-welcome-container">
         <img src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png" alt="logo" className="logo-img"/>
@@ -91,30 +102,34 @@ class Greeting extends React.Component {
           <Button className="order-button"><Link to="/order">Get your racquet Strung</Link></Button>
 
           <button className="guest-login" onClick={this.loginGuest}>{"Explore as Guest"}</button>
-          {//sessionLinks
-          }
           <Grid>
           <Col className="text-center">
           <h2 className="welcome-instructions">How it works</h2>
           </Col>
           <Row className="show-grid">
           <Col lg={4} md={4}>
-          <div className='number-icon'>1</div>
-          <div className='content'>
-          <h3 className="header-i">Send us your racquet</h3>
+          <div className="text-center">
+          <i className="fa fa-truck fa-5x imgstruction" aria-hidden="true"></i>
+          </div>
+          <div className='content text-center'>
+          <h3 className="header-i text-center">Send us your racquet</h3>
           <p className="num-icon-content">Print out the packaging slip and mail your racquet to us. We pay for shipping!</p>
           </div>
           </Col>
           <Col lg={4} md={4}>
-          <div className='number-icon'>2</div>
-          <div className='content'>
+          <div className="text-center">
+          <i className="fa fa-bed fa-5x imgstruction" aria-hidden="true"></i>
+          </div>
+          <div className='content text-center'>
           <h3 className="header-i">Take a break</h3>
           <p className="num-icon-content">Sit tight while one of our industry leading technicians strings your racquet</p>
           </div>
           </Col>
           <Col lg={4} md={4}>
-          <div className='number-icon'>3</div>
-          <div className='content'>
+          <div className="text-center">
+          <i className="fa fa-dribbble fa-5x imgstruction" aria-hidden="true"></i>
+          </div>
+          <div className='content text-center'>
           <h3 className="header-i">Thwack!</h3>
           <p className="num-icon-content">Your freshly strung racquet will arrive in a few days, ready for the court</p>
           </div>

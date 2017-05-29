@@ -7,7 +7,6 @@ const mapStateToProps = ({ session }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => {
-  console.log(login);
   return {
     login: user => dispatch(login(user))
   }

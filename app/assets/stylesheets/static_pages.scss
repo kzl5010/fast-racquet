@@ -4,10 +4,11 @@
 .signup-button {
   padding: 0px;
   color: darkorange;
+  font-size: 20px;
 }
 
 .signup-promo {
-
+  font-size: 20px;
   background-color: lightyellow;
   border-bottom: darkorange 2px solid;
 }
@@ -15,4 +16,24 @@
 
 .welcome-instructions {
   text-decoration: underline;
+}
+
+.input-group {
+  margin-bottom: 13px;
+}
+
+.errors {
+  color: darkred;
+}
+
+.imgstruction {
+  color: dodgerblue;
+}
+
+.header-i {
+  color: dodgerblue;
+}
+
+.row {
+  margin-right: 0px;
 }

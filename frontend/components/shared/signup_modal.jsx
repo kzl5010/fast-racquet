@@ -69,9 +69,6 @@ class SignupModal extends React.Component {
         <form onSubmit={this.handleSubmit} className="form-horizontal">
         <h1 className="welcome-screen-text">	Get your racquet fast  </h1>
           <div className="login-form">
-          <p>
-          Please Sign Up
-          </p>
 
             {this.renderErrors()}
             {//<FormGroup>

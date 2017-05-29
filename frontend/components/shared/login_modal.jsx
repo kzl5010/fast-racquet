@@ -69,14 +69,12 @@ class LoginModal extends React.Component {
         <h1 className="welcome-screen-text">	Get your racquet fast  </h1>
         <form onSubmit={this.handleSubmit} className="form-horizontal">
           <div className="login-form">
-          <p>
-          Please Login
-          </p>
+
 
             {this.renderErrors()}
             <InputGroup>
               <InputGroup.Addon>
-              <i className="fa fa-envelope fa-fw" aria-hidden="true"></i>
+              <i className="fa fa-envelope fa-fw fa-fh" aria-hidden="true"></i>
               </InputGroup.Addon>
               <FormControl type="text"
                 value={this.state.email}
@@ -85,7 +83,7 @@ class LoginModal extends React.Component {
             </InputGroup>
             <InputGroup>
               <InputGroup.Addon>
-                <i className="fa fa-lock fa-fw" aria-hidden="true"></i>
+                <i className="fa fa-lock fa-fw fa-fh" aria-hidden="true"></i>
               </InputGroup.Addon>
               <FormControl type="password"
               value={this.state.password}
