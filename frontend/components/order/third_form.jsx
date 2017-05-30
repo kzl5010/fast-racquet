@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
-import StripeCheckout from 'react-stripe-checkout';
+// import StripeCheckout from 'react-stripe-checkout';
 
 
 class ThirdForm extends React.Component {
