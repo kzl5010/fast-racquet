@@ -1,6 +1,6 @@
 import React from 'react';
 import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete';
-import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
+import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup, ButtonGroup } from 'react-bootstrap';
 
 
 class FirstForm extends React.Component {
@@ -18,7 +18,12 @@ class FirstForm extends React.Component {
     this.setEdit = this.setEdit.bind(this);
     this.setString = this.setString.bind(this);
     this.stringTypes = ["Synthetic gut", "Polyester", "Multifilament", "Hybrid", "Provide your own string"];
-    this.stringDescriptions = [];
+    this.stringHeader = ["Value performance", "Durability & Playability", "Comfort, Power, & Fuel", "The best of all worlds", "You know best"];
+    this.stringDescriptions = ["The best choice for most players. These strings are very playable and affordable.",
+                              "Polys are commonly used by pros and advanced players who have aggressive swings.",
+                              "Multifilaments are great for players with less aggressive swings who are looking for a soft feel.",
+                              "A hybrid usually blends a tougher string with a softer string to maximize durability and comfort.",
+                              "Just send the string (40 feet) in with your racquet. We'll handle the rest."]
   }
 
 
@@ -77,7 +82,7 @@ class FirstForm extends React.Component {
     // const AutocompleteItem = ({ suggestion }) => (<div><i className="fa fa-map-marker"/>{suggestion}</div>)
     let that = this;
     if (this.props.stringies) {
-      that.stringList = (<Row>
+      that.stringList = (<Row><ButtonGroup>
         {that.stringTypes.map((stringType, idx1) => {
           return (<Col lg={12} md={12}><Button onClick={this.setEdit} key={idx1} id={idx1}>{stringType}
             {this.props.stringies.map((stringy, idx) => {
@@ -87,7 +92,7 @@ class FirstForm extends React.Component {
             })}
           </Button></Col>)
         })}
-        </Row>)
+        </ButtonGroup></Row>)
     }
     let stringOptions = null
     // console.log(that.stringList);

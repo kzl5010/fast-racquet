@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
+import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup, Image } from 'react-bootstrap';
 
 class LoginModal extends React.Component {
   constructor(props){
@@ -51,7 +51,7 @@ class LoginModal extends React.Component {
     );
     return (
       <span className="login-form-container">
-      <Button className="pull-right"
+      <Button className="pull-right header-link"
         bsStyle="link"
         bsSize="medium"
         onClick={this.open}
@@ -61,12 +61,12 @@ class LoginModal extends React.Component {
         <Modal show={this.state.showModal} onHide={this.close}>
         <Modal.Header closeButton>
         <Col md={12}>
-        <img src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png" alt="logo" className="logo-img"/>
+        <Image src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png" alt="logo" className="logo-img"/>
         </Col>
         </Modal.Header>
         <Modal.Body>
 
-        <h1 className="welcome-screen-text">	Get your racquet fast  </h1>
+        <h1 className="welcome-screen-text text-center">	Get your racquet fast  </h1>
         <form onSubmit={this.handleSubmit} className="form-horizontal">
           <div className="login-form">
 

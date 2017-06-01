@@ -5,7 +5,8 @@ import HeaderContainer from './shared/header_container';
 const App = ({ children }) => (
   <div id="container">
     <header>
-      <HeaderContainer />
+    {//  <HeaderContainer />
+    }
     </header>
     {children}
   </div>
