@@ -36,13 +36,13 @@ class Header extends React.Component {
           {deal}
           <Row>
           <Col lg={12} md={12} sm={12}>
-          <Button bsStyle="link" className="header-button"><Link to="/">Home</Link>
+          <Button bsStyle="link" className="header-button"><Link className="header-link" to="/">Home</Link>
           </Button>
-          <Button bsStyle="link" className="header-button"><Link to="/refer">Refer a friend</Link>
+          <Button bsStyle="link" className="header-button"><Link className="header-link" to="/refer">Refer a friend</Link>
           </Button>
-          <Button bsStyle="link" className="header-button"><Link to="/about">About</Link>
+          <Button bsStyle="link" className="header-button"><Link className="header-link" to="/about">About</Link>
           </Button>
-          <Button bsStyle="link" className="header-button pull-right" onClick={this.handleClick}>Log Out</Button>
+          <Button bsStyle="link" className="header-button header-link pull-right" onClick={this.handleClick}>Log Out</Button>
           </Col>
           </Row>
         {//    <button className="header-button" onClick={logout}>Log Out</button>
@@ -62,11 +62,12 @@ class Header extends React.Component {
           </div>
           <Row>
           <Col lg={12} md={12} sm={12}>
-          <Button bsStyle="link" className="header-button"><Link to="/">Home</Link>
+          <Button bsStyle="link" className="header-button"><Link className="header-link" to="/">Home</Link>
           </Button>
-          <Button bsStyle="link" className="header-button"><Link to="/refer">Refer a friend</Link>
+          <button className="header-button" onClick={this.loginGuest}>Guest</button>
+          <Button bsStyle="link" className="header-button"><Link className="header-link" to="/refer">Refer a friend</Link>
           </Button>
-          <Button bsStyle="link" className="header-button"><Link to="/about">About</Link>
+          <Button bsStyle="link" className="header-button"><Link className="header-link" to="/about">About</Link>
           </Button>
           <LoginModalContainer />
           </Col>
@@ -74,8 +75,7 @@ class Header extends React.Component {
           {
           //<SignupModalContainer />
           }
-          {//            <button className="header-button" onClick={this.loginGuest}>Guest</button>
-          }
+
         </div>
       );
     }
