@@ -74,17 +74,57 @@ h1 {
 }
 
 .stage-active {
-  color: #00964b;
+  border-bottom: 1px solid darkblue;
   // font-family: "Proxima Semibold", Arial, Helvetica, sans-serif;
 }
 
 .stage-complete {
-  color: #00964b;
+  color: darkblue;
 }
 
-.stage-items-group {
-  border-top: 1px solid #ebecec;
-  border-left: 1px solid #ebecec;
-  border-right: 1px solid #ebecec;
-  border-bottom: 1.5px solid #ebecec;
+.sttname {
+  font-size: 1.2em;
+  color: blue;
+}
+
+.stheader {
+  font-size: 1.10em;
+  color: black;
+}
+
+.stdescription {
+  color: black;
+}
+
+.string-type {
+  width: 600px;
+}
+
+.of1 {
+
+}
+
+.sub-button {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.ssbgt{
+  width: 100%;
+}
+// .listing {
+//   margin-bottom: 15px;
+// }
+
+// .btn-group {
+//   width: 100%;
+// }
+
+.string-entry {
+  margin-bottom: 15px;
+  padding-left: 0px;
+}
+
+.string-description {
+  width: auto;
 }
