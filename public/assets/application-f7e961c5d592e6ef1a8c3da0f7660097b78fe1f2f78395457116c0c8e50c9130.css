@@ -1,0 +1,150 @@
+/* line 4, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.signup-button {
+  padding: 0px;
+  color: darkorange;
+  font-size: 20px;
+}
+
+/* line 10, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.signup-promo {
+  font-size: 20px;
+  background-color: lightyellow;
+  border-bottom: darkorange 2px solid;
+}
+
+/* line 17, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.welcome-instructions {
+  text-decoration: underline;
+}
+
+/* line 21, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.input-group {
+  margin-bottom: 13px;
+}
+
+/* line 25, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.errors {
+  color: darkred;
+}
+
+/* line 29, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.imgstruction {
+  color: dodgerblue;
+}
+
+/* line 33, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.header-i {
+  color: dodgerblue;
+}
+
+/* line 37, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.row {
+  margin-right: 0px;
+}
+
+/* line 41, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.string-name {
+  margin-top: 0px;
+}
+
+/* line 45, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.jumbo-greeting {
+  background-image: url(https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495416822/christopher-burns-2003211_pikrdl.jpg);
+  background-size: cover;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  min-height: 480px;
+}
+
+/* line 53, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.page-header {
+  border-bottom: none;
+  margin-top: 12px;
+  margin-bottom: 15px;
+}
+
+/* line 59, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 68, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.header-link {
+  color: white;
+}
+
+/* line 72, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.header-link:hover {
+  color: white;
+}
+
+/* line 76, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.stage-active {
+  border-bottom: 1px solid darkblue;
+}
+
+/* line 81, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.stage-complete {
+  color: darkblue;
+}
+
+/* line 85, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.sttname {
+  font-size: 1.2em;
+  color: blue;
+}
+
+/* line 90, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.stheader {
+  font-size: 1.10em;
+  color: black;
+}
+
+/* line 95, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.stdescription {
+  color: black;
+}
+
+/* line 99, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.string-type {
+  width: 600px;
+}
+
+/* line 107, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.sub-button {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* line 112, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.ssbgt {
+  width: 100%;
+}
+
+/* line 123, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.string-entry {
+  margin-bottom: 15px;
+  padding-left: 0px;
+}
+
+/* line 128, /home/ken/fast-racquet/app/assets/stylesheets/static_pages.scss */
+.string-description {
+  width: auto;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
