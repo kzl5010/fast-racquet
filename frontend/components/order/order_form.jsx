@@ -209,9 +209,9 @@ class OrderForm extends React.Component {
         <nav className='stage-header'>
         <Grid>
           <Row className='show-grid'>
-            <Col lg={4} md={4} id='1' className='text-center stage-active stage-items-group'>Pick your string </Col>
-            <Col lg={4} md={4} className="text-center stage-items-group" id='2'>Set your tension</Col>
-            <Col lg={4} md={4} className="text-center stage-items-group" id='3'> Place order</Col>
+            <Col lg={4} md={4} sm={4} id='1' className='text-center stage-active stage-items-group'>Pick your string </Col>
+            <Col lg={4} md={4} sm={4} className="text-center stage-items-group" id='2'>Set your tension</Col>
+            <Col lg={4} md={4} sm={4} className="text-center stage-items-group" id='3'> Place order</Col>
           </Row>
         </Grid>
         </nav>

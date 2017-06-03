@@ -17,6 +17,7 @@ class FirstForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setEdit = this.setEdit.bind(this);
     this.setString = this.setString.bind(this);
+    this.renderWhiteSpace = this.renderWhiteSpace.bind(this);
     this.stringTypes = ["Synthetic gut", "Polyester", "Multifilament", "Hybrid", "Provide your own string"];
     this.stringHeader = ["Value performance", "Durability & Playability", "Comfort, Power, & Fuel", "The best of all worlds", "You know best"];
     this.stringDescriptions = ["The best choice for most players. These strings are very playable and affordable.",
@@ -43,7 +44,7 @@ class FirstForm extends React.Component {
   setEdit(e) {
     e.preventDefault();
     console.log(e.target)
-    if (!e.target.className.includes("sub-button")) {
+    if (!e.target.className.includes("sb")) {
       this.setState({editing: e.target.id})
       if (e.target.id == 4) {
         this.props.updateForm({stringy_id: 13});
@@ -60,6 +61,12 @@ class FirstForm extends React.Component {
     e.preventDefault();
     this.props.updateForm(this.state);
     this.props.nextStage(e);
+  }
+
+  renderWhiteSpace(idx) {
+    if (this.state.editing == idx) {
+      return (<div><br /> <br /> <br /> <br /></div>)
+    }
   }
 
   renderErrors() {
@@ -84,7 +91,7 @@ class FirstForm extends React.Component {
     if (this.props.stringies) {
       that.stringList = (<ButtonGroup>
         {that.stringTypes.map((stringType, idx1) => {
-          return (<Col lg={12} md={12} className="string-entry pull-left">
+          return (<Col lg={12} md={12} sm={12} className="string-entry pull-left">
           <Button className="string-type" onClick={this.setEdit} key={idx1} id={idx1}>
             <Col id={idx1} className="pull-left">
             <div id={idx1} className="sttname pull-left">
@@ -97,17 +104,19 @@ class FirstForm extends React.Component {
             <div id={idx1} className="stdescription">{this.stringDescriptions[idx1]}</div>
             </Col>
             <div />
-            <ButtonGroup>
+            {this.renderWhiteSpace(idx1)}
+            <ButtonGroup className="pull-left ssbgt">
             {this.props.stringies.map((stringy, idx) => {
               if (stringy.typeof == stringType && this.state.editing == idx1) {
-                  return (<Col className="string-listing"><Button className="sub-button" onClick={this.setString} id={idx} key={idx}>
-                            <div className="sub-button string-description pull-left" id={idx}>
+                  return (<div className="sb string-listing"><Button className="sb pull-left sub-button" onClick={this.setString} id={idx} key={idx}>
+                            <div className="sb string-description pull-left" id={idx}>
                               {stringy.description}
                             </div>
-                            <div className="sub-button string-price pull-left pull-left" id={idx}>
-                              +{stringy.price}
+                            <br/>
+                            <div className="sb string-price pull-left pull-left" id={idx}>
+                              &nbsp;+&nbsp;{stringy.price}
                             </div>
-                          </Button></Col>)
+                          </Button></div>)
               }
             })}
             </ButtonGroup>

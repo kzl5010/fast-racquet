@@ -74,7 +74,7 @@ h1 {
 }
 
 .stage-active {
-  border-bottom: darkblue;
+  border-bottom: 1px solid darkblue;
   // font-family: "Proxima Semibold", Arial, Helvetica, sans-serif;
 }
 
@@ -96,9 +96,25 @@ h1 {
   color: black;
 }
 
+.string-type {
+  width: 600px;
+}
+
 .of1 {
 
 }
+
+.sub-button {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.ssbgt{
+  width: 100%;
+}
+// .listing {
+//   margin-bottom: 15px;
+// }
 
 // .btn-group {
 //   width: 100%;
@@ -107,4 +123,8 @@ h1 {
 .string-entry {
   margin-bottom: 15px;
   padding-left: 0px;
+}
+
+.string-description {
+  width: auto;
 }
