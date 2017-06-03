@@ -2,9 +2,9 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import LoginModalContainer from './login_modal_container';
 import SignupModalContainer from './signup_modal_container';
-import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Grid, Row } from 'react-bootstrap';
+import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Grid, Row, Image } from 'react-bootstrap';
 
-class Header extends React.Component {
+class SecondHeader extends React.Component {
   constructor(props){
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -36,13 +36,17 @@ class Header extends React.Component {
           {deal}
           <Row>
           <Col lg={12} md={12} sm={12}>
-          <Button bsStyle="link" className="header-button"><Link className="header-link" to="/">Home</Link>
+          <Button bsStyle="link" className="2h-button"><Link className="2h-link" to="/">Home</Link>
           </Button>
-          <Button bsStyle="link" className="header-button"><Link className="header-link" to="/refer">Refer a friend</Link>
+          <Button bsStyle="link" className="2h-button"><Link className="2h-link" to="/refer">Refer a friend</Link>
           </Button>
-          <Button bsStyle="link" className="header-button"><Link className="header-link" to="/about">About</Link>
+          <Button bsStyle="link" className="2h-button"><Link className="2h-link" to="/about">About</Link>
           </Button>
-          <Button bsStyle="link" className="header-button header-link pull-right" onClick={this.handleClick}>Log Out</Button>
+          <Button bsStyle="link" className="2h-button 2h-link pull-right" onClick={this.handleClick}>Log Out</Button>
+          <div className="text-center">
+          <Image src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png"
+          alt="logo" className="logo-img center-block"/>
+          </div>
           </Col>
           </Row>
         {//    <button className="header-button" onClick={logout}>Log Out</button>
@@ -62,14 +66,18 @@ class Header extends React.Component {
           </div>
           <Row>
           <Col lg={12} md={12} sm={12}>
-          <Button bsStyle="link" className="header-button"><Link className="header-link" to="/">Home</Link>
+          <Button bsStyle="link" className="2h-button"><Link className="2h-link" to="/">Home</Link>
           </Button>
-          <button className="header-button" onClick={this.loginGuest}>Guest</button>
-          <Button bsStyle="link" className="header-button"><Link className="header-link" to="/refer">Refer a friend</Link>
+          <button className="2h-button" onClick={this.loginGuest}>Guest</button>
+          <Button bsStyle="link" className="2h-button"><Link className="2h-link" to="/refer">Refer a friend</Link>
           </Button>
-          <Button bsStyle="link" className="header-button"><Link className="header-link" to="/about">About</Link>
+          <Button bsStyle="link" className="2h-button"><Link className="2h-link" to="/about">About</Link>
           </Button>
-          <LoginModalContainer headertype="header-link"/>
+          <LoginModalContainer headertype={"2h-link"}/>
+          <div className="text-center">
+          <Image src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png"
+          alt="logo" className="logo-img center-block"/>
+          </div>
           </Col>
           </Row>
           {
@@ -97,4 +105,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default SecondHeader;

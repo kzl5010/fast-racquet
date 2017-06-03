@@ -110,7 +110,9 @@ class SignupModal extends React.Component {
                 onChange={this.update("last_name")}
                 className="login-input" placeholder="Last Name" />
             </InputGroup>
+            <div className="text-center">
             <Button type="submit" bsSize="medium">Sign Up</Button>
+            </div>
           </div>
           </form>
 

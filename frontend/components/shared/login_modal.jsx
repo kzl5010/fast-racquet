@@ -9,6 +9,7 @@ class LoginModal extends React.Component {
     this.update = this.update.bind(this);
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
+    this.headertype = this.props.headertype || "header-link";
   }
 
   open() {
@@ -51,7 +52,7 @@ class LoginModal extends React.Component {
     );
     return (
       <span className="login-form-container">
-      <Button className="pull-right header-link"
+      <Button className={"pull-right " + this.headertype}
         bsStyle="link"
         bsSize="medium"
         onClick={this.open}
@@ -90,8 +91,9 @@ class LoginModal extends React.Component {
               onChange={this.update("password")}
               className="login-input" placeholder="Password"/>
             </InputGroup>
+            <div className="text-center">
             <Button type="submit" bsSize="medium">Sign in</Button>
-
+            </div>
           </div>
           </form>
           </Modal.Body>

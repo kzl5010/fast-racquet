@@ -84,7 +84,7 @@ class FirstForm extends React.Component {
     if (this.props.stringies) {
       that.stringList = (<Row><ButtonGroup>
         {that.stringTypes.map((stringType, idx1) => {
-          return (<Col lg={12} md={12}><Button onClick={this.setEdit} key={idx1} id={idx1}>{stringType}
+          return (<Col lg={12} md={12} className="text-center"><Button className="string-type" onClick={this.setEdit} key={idx1} id={idx1}>{stringType}
             {this.props.stringies.map((stringy, idx) => {
               if (stringy.typeof == stringType && this.state.editing == idx1) {
                   return (<Button className="sub-button" onClick={this.setString} id={idx} key={idx}>{stringy.description}</Button>)
@@ -103,7 +103,7 @@ class FirstForm extends React.Component {
     // }
     return (
       <form className="first-form" onSubmit={this.handleSubmit}>
-          <h4>What kind of string do you need?</h4>
+          <div className="text-center"><h4>What kind of string do you need?</h4></div>
             <div id="alert">{  this.renderErrors()   } </div>
             {this.stringList}
             <Button className="submit" type="submit" value="Save" disabled={!this.state.stringy_id}>Save</Button>

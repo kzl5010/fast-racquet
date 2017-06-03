@@ -2,6 +2,7 @@ import React from 'react';
 // import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete';
 import moment from 'moment';
 import { Grid, Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
+import SecondHeaderContainer from '../shared/second_header_container';
 
 // import DatePicker from 'react-datepicker';
 // import TaskerIndexContainer from '../tasker/tasker_index_container';
@@ -40,6 +41,15 @@ class OrderForm extends React.Component {
     this.updateForm = this.updateForm.bind(this);
     this.updateForm2 = this.updateForm2.bind(this);
     this.nextStage = this.nextStage.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchStringies();
+    // this.props.fetchTaskers();
+  }
+
+  componentWillMount() {
+    this.props.fetchStringies();
   }
 
   formComplete() {
@@ -106,15 +116,6 @@ class OrderForm extends React.Component {
       this.props.createOrder({order});
       hashHistory.push("/")
     }
-  }
-
-  componentDidMount() {
-    this.props.fetchStringies();
-    // this.props.fetchTaskers();
-  }
-
-  componentWillMount() {
-    this.props.fetchStringies();
   }
 
   updateForm(obj) {
@@ -202,14 +203,15 @@ class OrderForm extends React.Component {
 
     return (
       <section className="taskRequest-container">
+        <SecondHeaderContainer />
         <div id="alert"></div> { //TODO FIX THIS??? ERRORS
         }
         <nav className='stage-header'>
         <Grid>
           <Row className='show-grid'>
-            <Col lg={4} md={4} id='1' className='text-center stage-active'><div>Pick your string </div></Col>
-            <Col lg={4} md={4} className="text-center" id='2'><div>Set your tension</div></Col>
-            <Col lg={4} md={4} className="text-center" id='3'> Place order</Col>
+            <Col lg={4} md={4} id='1' className='text-center stage-active stage-items-group'>Pick your string </Col>
+            <Col lg={4} md={4} className="text-center stage-items-group" id='2'>Set your tension</Col>
+            <Col lg={4} md={4} className="text-center stage-items-group" id='3'> Place order</Col>
           </Row>
         </Grid>
         </nav>

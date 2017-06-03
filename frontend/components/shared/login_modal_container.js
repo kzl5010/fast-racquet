@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import { login, logout } from '../../actions/session_actions';
 import LoginModal from './login_modal';
 
-const mapStateToProps = ({session}) => ({
+const mapStateToProps = ({session}, ownProps) => ({
   currentUser: session.currentUser,
-  errors: session.errors
+  errors: session.errors,
+  headertype: ownProps.headertype,
 });
 
 const mapDispatchToProps = (dispatch) => ({

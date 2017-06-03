@@ -47,6 +47,7 @@
   background-size: cover;
   padding-top: 0px;
   margin-bottom: 0px;
+  min-height: 480px;
 }
 
 .page-header {
@@ -70,4 +71,20 @@ h1 {
 
 .header-link:hover{
   color:white;
+}
+
+.stage-active {
+  color: #00964b;
+  // font-family: "Proxima Semibold", Arial, Helvetica, sans-serif;
+}
+
+.stage-complete {
+  color: #00964b;
+}
+
+.stage-items-group {
+  border-top: 1px solid #ebecec;
+  border-left: 1px solid #ebecec;
+  border-right: 1px solid #ebecec;
+  border-bottom: 1.5px solid #ebecec;
 }
