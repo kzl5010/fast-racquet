@@ -1,6 +1,6 @@
 import React from 'react';
 import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete';
-import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup, ButtonGroup } from 'react-bootstrap';
+import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup, ButtonGroup, PageHeader, Grid } from 'react-bootstrap';
 
 
 class FirstForm extends React.Component {
@@ -82,17 +82,38 @@ class FirstForm extends React.Component {
     // const AutocompleteItem = ({ suggestion }) => (<div><i className="fa fa-map-marker"/>{suggestion}</div>)
     let that = this;
     if (this.props.stringies) {
-      that.stringList = (<Row><ButtonGroup>
+      that.stringList = (<ButtonGroup>
         {that.stringTypes.map((stringType, idx1) => {
-          return (<Col lg={12} md={12} className="text-center"><Button className="string-type" onClick={this.setEdit} key={idx1} id={idx1}>{stringType}
+          return (<Col lg={12} md={12} className="string-entry pull-left">
+          <Button className="string-type" onClick={this.setEdit} key={idx1} id={idx1}>
+            <Col id={idx1} className="pull-left">
+            <div id={idx1} className="sttname pull-left">
+              {stringType}
+            </div>
+            <br className="sttname"/>
+            <div id={idx1} className="stheader pull-left">{this.stringHeader[idx1]}
+            </div>
+            <br className="stheader"/>
+            <div id={idx1} className="stdescription">{this.stringDescriptions[idx1]}</div>
+            </Col>
+            <div />
+            <ButtonGroup>
             {this.props.stringies.map((stringy, idx) => {
               if (stringy.typeof == stringType && this.state.editing == idx1) {
-                  return (<Button className="sub-button" onClick={this.setString} id={idx} key={idx}>{stringy.description}</Button>)
+                  return (<Col className="string-listing"><Button className="sub-button" onClick={this.setString} id={idx} key={idx}>
+                            <div className="sub-button string-description pull-left" id={idx}>
+                              {stringy.description}
+                            </div>
+                            <div className="sub-button string-price pull-left pull-left" id={idx}>
+                              +{stringy.price}
+                            </div>
+                          </Button></Col>)
               }
             })}
+            </ButtonGroup>
           </Button></Col>)
         })}
-        </ButtonGroup></Row>)
+        </ButtonGroup>)
     }
     let stringOptions = null
     // console.log(that.stringList);
@@ -103,10 +124,16 @@ class FirstForm extends React.Component {
     // }
     return (
       <form className="first-form" onSubmit={this.handleSubmit}>
-          <div className="text-center"><h4>What kind of string do you need?</h4></div>
-            <div id="alert">{  this.renderErrors()   } </div>
+          <div id="alert">{  this.renderErrors()   } </div>
+            <Grid className="of1">
+            <Row>
+            <Col lg={8} md={8}>
+            <h1><small>What kind of string do you need?</small></h1>
             {this.stringList}
+            </Col>
+            </Row>
             <Button className="submit" type="submit" value="Save" disabled={!this.state.stringy_id}>Save</Button>
+            </Grid>
       </form>
     )
   }

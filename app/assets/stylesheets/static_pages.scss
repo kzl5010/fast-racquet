@@ -74,17 +74,37 @@ h1 {
 }
 
 .stage-active {
-  color: #00964b;
+  border-bottom: darkblue;
   // font-family: "Proxima Semibold", Arial, Helvetica, sans-serif;
 }
 
 .stage-complete {
-  color: #00964b;
+  color: darkblue;
 }
 
-.stage-items-group {
-  border-top: 1px solid #ebecec;
-  border-left: 1px solid #ebecec;
-  border-right: 1px solid #ebecec;
-  border-bottom: 1.5px solid #ebecec;
+.sttname {
+  font-size: 1.2em;
+  color: blue;
+}
+
+.stheader {
+  font-size: 1.10em;
+  color: black;
+}
+
+.stdescription {
+  color: black;
+}
+
+.of1 {
+
+}
+
+// .btn-group {
+//   width: 100%;
+// }
+
+.string-entry {
+  margin-bottom: 15px;
+  padding-left: 0px;
 }
