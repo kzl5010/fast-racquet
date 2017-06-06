@@ -25,9 +25,9 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-  resources :charges
-  
+
   namespace :api, defaults: {format: :json} do
+    resources :charges
     resources :users, only: [:create, :show, :update]
     resource :session, only: [:create, :destroy, :show]
     resources :stringies, only: [:create, :show, :index, :update, :destroy]

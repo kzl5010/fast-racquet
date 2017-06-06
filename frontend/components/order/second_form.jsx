@@ -2,7 +2,7 @@ import React from 'react';
 // import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete';
 import moment from 'moment';
 import DatePicker from 'react-datepicker';
-import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
+import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup, Grid } from 'react-bootstrap';
 
 
 class SecondForm extends React.Component {
@@ -46,6 +46,7 @@ class SecondForm extends React.Component {
   render() {
       return (
         <form className="second-form" onSubmit={this.handleSubmit}>
+          <Grid>
           <h4>Choose a tension</h4>
               <InputGroup>
               <FormControl type="number" value={this.state.tension} placeholder="lbs"
@@ -59,6 +60,7 @@ class SecondForm extends React.Component {
               </InputGroup>
               <Button disabled={!this.state.tension} className="submit" type="submit" value="Save">Save
               </Button>
+            </Grid>
           </form>
     );
   }

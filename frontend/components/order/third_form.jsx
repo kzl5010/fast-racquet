@@ -1,8 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
-// import StripeCheckout from 'react-stripe-checkout';
-
+import StripeCheckout from 'react-stripe-checkout';
+// import PaymentForm from './payment';
 
 class ThirdForm extends React.Component {
   constructor(props) {
@@ -13,18 +13,30 @@ class ThirdForm extends React.Component {
       address: this.props.address,
       tension: this.props.tension,
       // date: this.props.date,
-      price: this.props.price
+      price: this.props.price,
     };
-
+    this.onToken = this.onToken.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   onToken(token) {
-    fetch('/save-stripe-token', {
+    token.amount = Number(this.state.price);
+    console.log(JSON.stringify(token));
+    fetch('/api/charges', {
       method: 'POST',
       body: JSON.stringify(token),
-    }).then(token => {
-      alert(`We are in business, ${token.email}`);
+      headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json",
+      'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+      'Access-Control-Allow-Headers':'X-Requested-With'
+    },
+    }).then(response => {
+      console.log(response);
+      if (response.status == 200) {
+        console.log("Success");
+      }
+      response.json();
     });
   }
 
@@ -42,7 +54,7 @@ class ThirdForm extends React.Component {
 
   render() {
     return (
-      <form className="request-details" onSubmit={this.handleSubmit}>
+      <div className="request-details" onSubmit={this.handleSubmit}>
 
 
       <div className='third-form'>
@@ -56,9 +68,12 @@ class ThirdForm extends React.Component {
 
       <StripeCheckout
         token={this.onToken}
+        amount={Number(this.state.price)*100}
+        currency="USD"
+        name="Fast Racquet Inc."
         stripeKey="pk_test_L5srPMcfjPhbApU6CKVQs7lm"
       />
-      </form>
+      </div>
     );
   }
 }
