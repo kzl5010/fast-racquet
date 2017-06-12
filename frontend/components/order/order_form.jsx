@@ -1,6 +1,4 @@
 import React from 'react';
-// import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete';
-import moment from 'moment';
 import { Grid, Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
 import SecondHeaderContainer from '../shared/second_header_container';
 
@@ -16,21 +14,21 @@ class OrderForm extends React.Component {
     super(props);
     this.state = {
       stage: 1,
-      user_id: 1,
-      first_name: "placeholder",
-      last_name: "placeholder",
-      // task_id: this.props.params.taskId,
-      // address: "",
+      user_id: ,
+      first_name: null,
+      last_name: null,
       price: "40.00",
+      total_price: null,
       form: {
-        stringy_id: null,
-        address: null
+        stringy_id: null
       },
       form2: {
         tension: null,
         instructions: null
       },
-      // details: "",
+      form3: {
+        address: null,
+      },
       errors: null
     };
 
@@ -45,7 +43,6 @@ class OrderForm extends React.Component {
 
   componentDidMount() {
     this.props.fetchStringies();
-    // this.props.fetchTaskers();
   }
 
   componentWillMount() {
@@ -57,17 +54,10 @@ class OrderForm extends React.Component {
     if (!this.state.form.stringy_id) {
       this.missingFields.push("Please choose a string. ");
     }
-    // if (!this.state.form.task_id) {
-    //   this.missingFields.push("Please choose a task. ");
-    // }
-    // if (!this.state.form.address) {
-    //   this.missingFields.push("Please choose an address.");
-    // }
     if (this.missingFields.length > 0) {
-      // this.displayMissing();
+      return null;
     }
     return (this.state.form.stringy_id);
-    //&& this.state.form.task_id && this.state.form.address
   }
 
   secondFormComplete() {
@@ -75,19 +65,22 @@ class OrderForm extends React.Component {
     if (!this.state.form2.tension) {
       this.missingFields.push("You must set a tension");
     }
-    // if (!this.state.form2.date) {
-    //   this.missingFields.push("You must choose a day");
-    // }
-    // if (!this.state.form2.hours) {
-    //   this.missingFields.push("You must choose a time frame");
-    // }
     if (this.missingFields.length > 0) {
-      // this.displayMissing();
+      return null;
     }
     return (this.state.form2.tension);
-    // && this.state.form2.tasker_id && this.state.form2.hours
   }
 
+  thirdFormComplete() {
+    this.missingFields = [];
+    if (!this.state.form.address) {
+      this.missingFields.push("Please choose an address.");
+      return null;
+    }
+    return this.state.form3.address;
+
+  }
+  //TODO Why am i not using handlesubmit??
   nextStage(e) {
     e.preventDefault();
     if ((this.state.stage === 1) && this.formComplete()) {
@@ -100,7 +93,7 @@ class OrderForm extends React.Component {
       $('#2').removeClass('stage-active');
       $('#2').addClass('stage-complete');
       $('#3').addClass('stage-active');
-    } else if (this.state.stage === 3){
+    } else if (this.state.stage === 3 && this.thirdFormComplete()){
       // this.handleSubmit();
       let order = this.state;
       order.stringy_id = this.state.form.stringy_id;

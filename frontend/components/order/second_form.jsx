@@ -1,7 +1,5 @@
 import React from 'react';
 // import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete';
-import moment from 'moment';
-import DatePicker from 'react-datepicker';
 import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup, Grid } from 'react-bootstrap';
 
 

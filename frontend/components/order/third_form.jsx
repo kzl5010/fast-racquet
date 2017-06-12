@@ -1,8 +1,8 @@
+// TODO FIX THIS WITH BOOTSTRAP
 import React from 'react';
-import moment from 'moment';
 import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
+import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete';
 import StripeCheckout from 'react-stripe-checkout';
-// import PaymentForm from './payment';
 
 class ThirdForm extends React.Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class ThirdForm extends React.Component {
     this.state = {
       instructions: this.props.instructions,
       stringy_id: this.props.stringy_id,
-      address: this.props.address,
+      address: null,
       tension: this.props.tension,
       // date: this.props.date,
       price: this.props.price,
