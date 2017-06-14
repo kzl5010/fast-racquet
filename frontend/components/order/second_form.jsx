@@ -19,7 +19,7 @@ class SecondForm extends React.Component {
     return e => {
       this.setState({[field]: e.target.value});
       this.props.updateForm(this.state);
-    }
+    };
   }
 
 

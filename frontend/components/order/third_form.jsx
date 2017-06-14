@@ -1,6 +1,6 @@
 // TODO FIX THIS WITH BOOTSTRAP
 import React from 'react';
-import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
+import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup, Grid } from 'react-bootstrap';
 import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete';
 import StripeCheckout from 'react-stripe-checkout';
 
@@ -12,7 +12,6 @@ class ThirdForm extends React.Component {
       stringy_id: this.props.stringy_id,
       address: null,
       tension: this.props.tension,
-      // date: this.props.date,
       price: this.props.price,
     };
     this.onToken = this.onToken.bind(this);
@@ -32,11 +31,11 @@ class ThirdForm extends React.Component {
       'Access-Control-Allow-Headers':'X-Requested-With'
     },
     }).then(response => {
-      console.log(response);
+      console.log(token);
       if (response.status == 200) {
         console.log("Success");
       }
-      response.json();
+      // response.json();
     });
   }
 
@@ -45,16 +44,13 @@ class ThirdForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // this.props.updateForm(this.state);
-    // stripe.card.createToken(e.currentTarget, function (status, response) {
-    //   console.log( status, response );
-    // });
     this.props.nextStage(e);
   }
 
 
   render() {
     return (
-      <div className="request-details" onSubmit={this.handleSubmit}>
+      <Grid className="request-details" onSubmit={this.handleSubmit}>
 
 
       <div className='third-form'>
@@ -71,9 +67,12 @@ class ThirdForm extends React.Component {
         amount={Number(this.state.price)*100}
         currency="USD"
         name="Fast Racquet Inc."
+        shippingAddress={true}
+        billingAddress={true}
+        zipCode={true}
         stripeKey="pk_test_L5srPMcfjPhbApU6CKVQs7lm"
       />
-      </div>
+      </Grid>
     );
   }
 }

@@ -1,33 +1,34 @@
 import React from 'react';
 import { Grid, Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
+import { hashHistory } from 'react-router'
 import SecondHeaderContainer from '../shared/second_header_container';
-
-// import DatePicker from 'react-datepicker';
-// import TaskerIndexContainer from '../tasker/tasker_index_container';
 import FirstForm from './first_form';
 import SecondForm from './second_form';
 import ThirdForm from './third_form';
-import { hashHistory } from 'react-router'
 
 class OrderForm extends React.Component {
   constructor(props) {
     super(props);
+    let userID = null
+    if (this.props.currentUser) {
+      userID = this.props.currentUser.id;
+    }
     this.state = {
       stage: 1,
-      user_id: ,
+      user_id: userID,
       first_name: null,
       last_name: null,
       price: "40.00",
-      total_price: null,
       form: {
-        stringy_id: null
+        stringy_id: null,
       },
       form2: {
         tension: null,
-        instructions: null
+        instructions: null,
       },
       form3: {
         address: null,
+        total_price: null,
       },
       errors: null
     };
@@ -38,6 +39,7 @@ class OrderForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateForm = this.updateForm.bind(this);
     this.updateForm2 = this.updateForm2.bind(this);
+    this.updateForm3 = this.updateForm3.bind(this);
     this.nextStage = this.nextStage.bind(this);
   }
 
@@ -119,16 +121,16 @@ class OrderForm extends React.Component {
     this.setState({form2: obj});
   }
 
+  updateForm3(obj) {
+    this.setState({form3: obj});
+  }
+
   handleChange(field) {
     return e => this.setState({[field]: e.target.value});
   }
 
   changeDate(date) {
     this.setState({ date: date});
-  }
-
-  nextForm(e) {
-    e.preventDefault();
   }
 
   handleSubmit(e) {
@@ -185,7 +187,7 @@ class OrderForm extends React.Component {
 
     let stage;
     if (this.state.stage === 1) {
-      stage = <FirstForm nextStage={this.nextStage} updateForm={this.updateForm} stringies={this.props.stringies}/>
+      stage = <FirstForm nextStage={this.nextStage} updateForm={ this.updateForm } stringies={this.props.stringies}/>
     } else if (this.state.stage === 2) {
       stage = <SecondForm nextStage={this.nextStage} updateForm={this.updateForm2} stringies={this.props.stringies}/>
     } else {
@@ -197,7 +199,7 @@ class OrderForm extends React.Component {
     return (
       <section className="taskRequest-container">
         <SecondHeaderContainer />
-        <div id="alert"></div> { //TODO FIX THIS??? ERRORS
+        <div id="alert"></div> { // TODO FIX THIS??? ERRORS
         }
         <nav className='stage-header'>
         <Grid>
@@ -208,10 +210,13 @@ class OrderForm extends React.Component {
           </Row>
         </Grid>
         </nav>
-        <div className="booking-form">
+        <Grid className="booking-form">
           <p className="missing-fields">{this.missingFields}</p>
           {stage}
-        </div>
+          { // TODO PRICING HERE <stringies={ this.props.stringies } stringy_id={ this.state.stringy_id } handleChange={ this.handleChange("price") }/>
+            // Potentially this.handleChange
+          }
+        </Grid>
       </section>
     )
 

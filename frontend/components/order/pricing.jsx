@@ -2,15 +2,21 @@ import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, Inp
 import React from 'react';
 
 
-class ThirdForm extends React.Component {
+class PricingColumn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
-    }
+      currentUser: this.props.
+      price: this.props.price,
+    };
   }
 
   render() {
+    return (<Grid>
+      {this.props.price}
+    </Grid>)
 
   }
 }
+
+export default PricingColumn;
