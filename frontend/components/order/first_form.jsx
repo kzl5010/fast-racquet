@@ -8,12 +8,11 @@ class FirstForm extends React.Component {
     super(props);
     this.state = {
       stringy_id: null,
+      stringy_price: null,
       address: "",
       editing: "-1"
     };
     console.log(this.props.stringies);
-    this.stringlist = ""
-    this.onChange = (address) => this.setState({ address });
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setEdit = this.setEdit.bind(this);
     this.setString = this.setString.bind(this);
@@ -32,12 +31,13 @@ class FirstForm extends React.Component {
     return e => {
       this.setState({[field]: e.target.value});
       this.props.updateForm(this.state);
-    }
+    };
   }
 
   setString(e) {
     e.preventDefault();
     this.props.updateForm({stringy_id: parseInt(e.target.id)+1});
+    this.props.updateForm({stringy_price: this.props.stringies[parseInt(e.target.id)].price});
     this.setState({stringy_id: parseInt(e.target.id)+1});
   }
 
@@ -45,10 +45,11 @@ class FirstForm extends React.Component {
     e.preventDefault();
     console.log(e.target)
     if (!e.target.className.includes("sb")) {
-      this.setState({editing: e.target.id})
+      this.setState({editing: e.target.id});
       if (e.target.id == 4) {
         this.props.updateForm({stringy_id: 13});
-        this.setState({stringy_id: 13})
+        this.props.updateForm({stringy_price: 0});
+        this.setState({stringy_id: 13});
       }
     }
   }

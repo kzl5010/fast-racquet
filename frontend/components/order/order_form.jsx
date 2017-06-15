@@ -1,26 +1,36 @@
 import React from 'react';
 import { Grid, Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
-import { hashHistory } from 'react-router'
+import { hashHistory } from 'react-router';
 import SecondHeaderContainer from '../shared/second_header_container';
 import FirstForm from './first_form';
 import SecondForm from './second_form';
 import ThirdForm from './third_form';
+import PricingColumn from './pricing';
 
 class OrderForm extends React.Component {
   constructor(props) {
     super(props);
-    let userID = null
+    let userID = null;
+    this.firstBuy = false
     if (this.props.currentUser) {
       userID = this.props.currentUser.id;
+      if (this.props.currentUser.first_buy) {
+        this.firstBuy = true;
+      }
+    }
+    let total_price = 40.00;
+    if (this.firstBuy) {
+      total_price /= 2;
     }
     this.state = {
       stage: 1,
       user_id: userID,
       first_name: null,
       last_name: null,
-      price: "40.00",
+      total_price: total_price,
       form: {
         stringy_id: null,
+        stringy_price: null,
       },
       form2: {
         tension: null,
@@ -28,7 +38,6 @@ class OrderForm extends React.Component {
       },
       form3: {
         address: null,
-        total_price: null,
       },
       errors: null
     };
@@ -174,15 +183,16 @@ class OrderForm extends React.Component {
   }
 
   render() {
+    console.log(this.state.form.stringy_price);
     let stringies;
     if (!this.props.stringies){
-      return (<div>Hi</div>)
+      return (<div>Hi</div>);
     }
-    if (this.props.stringies) {
-         stringies = this.props.stringies.map((stringy, i)=>(
-        <option key={i} value={stringy.id}>{stringy.description}</option>
-      ));
-    }
+    // if (this.props.stringies) {
+    //      stringies = this.props.stringies.map((stringy, i)=>(
+    //     <option key={i} value={stringy.id}>{stringy.description}</option>
+    //   ));
+    // }
 
 
     let stage;
@@ -191,7 +201,7 @@ class OrderForm extends React.Component {
     } else if (this.state.stage === 2) {
       stage = <SecondForm nextStage={this.nextStage} updateForm={this.updateForm2} stringies={this.props.stringies}/>
     } else {
-      stage = <ThirdForm nextStage={this.nextStage} price={this.state.price} submit={this.handleSubmit}
+      stage = <ThirdForm nextStage={this.nextStage} price={this.state.total_price} submit={this.handleSubmit}
       instructions={this.state.form2.instructions} tension={this.state.form2.tension} stringy_id={this.state.form.stringy_id}
       address={"this.props.form.address"} stringies={this.props.stringies}/>
     }
@@ -212,14 +222,17 @@ class OrderForm extends React.Component {
         </nav>
         <Grid className="booking-form">
           <p className="missing-fields">{this.missingFields}</p>
+          <Row>
+            <Col lg={8} md={8} sm={8}>
           {stage}
-          { // TODO PRICING HERE <stringies={ this.props.stringies } stringy_id={ this.state.stringy_id } handleChange={ this.handleChange("price") }/>
-            // Potentially this.handleChange
-          }
+            </Col>
+          <Col lg={4} md={4} sm={4}>
+           <PricingColumn stringy_price={ this.state.total_price } currentUser={ this.props.currentUser } stringy_id={ this.state.stringy_id }/>
+          </Col>
+          </Row>
         </Grid>
       </section>
-    )
-
+    );
   }
 }
 
