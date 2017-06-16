@@ -28,9 +28,9 @@ class OrderForm extends React.Component {
       first_name: null,
       last_name: null,
       total_price: total_price,
+      stringy_price: null,
       form: {
         stringy_id: null,
-        stringy_price: null,
       },
       form2: {
         tension: null,
@@ -41,7 +41,7 @@ class OrderForm extends React.Component {
       },
       errors: null
     };
-
+    this.stringy_price = null;
     this.onChange = (address) => this.setState({ address });
     this.changeDate = this.changeDate.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -50,6 +50,7 @@ class OrderForm extends React.Component {
     this.updateForm2 = this.updateForm2.bind(this);
     this.updateForm3 = this.updateForm3.bind(this);
     this.nextStage = this.nextStage.bind(this);
+    this.goBack = this.goBack.bind(this);
   }
 
   componentDidMount() {
@@ -142,6 +143,12 @@ class OrderForm extends React.Component {
     this.setState({ date: date});
   }
 
+  goBack(e) {
+    e.preventDefault();
+    if (this.state.stage > e.target.id) {
+      this.setState({stage: e.target.id});
+    }
+  }
   handleSubmit(e) {
     // e.preventDefault();
     let order = this.state;
@@ -183,16 +190,20 @@ class OrderForm extends React.Component {
   }
 
   render() {
-    console.log(this.state.form.stringy_price);
     let stringies;
     if (!this.props.stringies){
       return (<div>Hi</div>);
+    }
+    if (this.state.form.stringy_id) {
+      this.stringy_price = this.props.stringies[this.state.form.stringy_id-1].price;
     }
     // if (this.props.stringies) {
     //      stringies = this.props.stringies.map((stringy, i)=>(
     //     <option key={i} value={stringy.id}>{stringy.description}</option>
     //   ));
     // }
+
+    console.log(this.stringy_price);
 
 
     let stage;
@@ -214,9 +225,9 @@ class OrderForm extends React.Component {
         <nav className='stage-header'>
         <Grid>
           <Row className='show-grid'>
-            <Col lg={4} md={4} sm={4} id='1' className='text-center stage-active stage-items-group'>Pick your string </Col>
-            <Col lg={4} md={4} sm={4} className="text-center stage-items-group" id='2'>Set your tension</Col>
-            <Col lg={4} md={4} sm={4} className="text-center stage-items-group" id='3'> Place order</Col>
+            <Col onClick={this.goBack} lg={4} md={4} sm={4} id='1' className='text-center stage-active stage-items-group'>Pick your string </Col>
+            <Col onClick={this.goBack} lg={4} md={4} sm={4} className="text-center stage-items-group" id='2'>Set your tension</Col>
+            <Col onClick={this.goBack} lg={4} md={4} sm={4} className="text-center stage-items-group" id='3'> Place order</Col>
           </Row>
         </Grid>
         </nav>
@@ -227,7 +238,7 @@ class OrderForm extends React.Component {
           {stage}
             </Col>
           <Col lg={4} md={4} sm={4}>
-           <PricingColumn stringy_price={ this.state.total_price } currentUser={ this.props.currentUser } stringy_id={ this.state.stringy_id }/>
+           <PricingColumn stringy_price={ this.stringy_price } currentUser={ this.props.currentUser } stringy_id={ this.state.stringy_id }/>
           </Col>
           </Row>
         </Grid>

@@ -37,7 +37,7 @@ class FirstForm extends React.Component {
   setString(e) {
     e.preventDefault();
     this.props.updateForm({stringy_id: parseInt(e.target.id)+1});
-    this.props.updateForm({stringy_price: this.props.stringies[parseInt(e.target.id)].price});
+    // this.props.updateForm({stringy_price: this.props.stringies[parseInt(e.target.id)].price});
     this.setState({stringy_id: parseInt(e.target.id)+1});
   }
 
