@@ -1,4 +1,5 @@
 import React from 'react';
+import parser from 'parse-address';
 import { Grid, Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
 import { hashHistory } from 'react-router';
 import SecondHeaderContainer from '../shared/second_header_container';
@@ -28,7 +29,6 @@ class OrderForm extends React.Component {
       first_name: null,
       last_name: null,
       total_price: total_price,
-      stringy_price: null,
       form: {
         stringy_id: null,
       },
@@ -37,6 +37,8 @@ class OrderForm extends React.Component {
         instructions: null,
       },
       form3: {
+        first_name: null,
+        last_name: null,
         address: null,
       },
       errors: null
@@ -107,7 +109,11 @@ class OrderForm extends React.Component {
       $('#3').addClass('stage-active');
     } else if (this.state.stage === 3 && this.thirdFormComplete()){
       // this.handleSubmit();
+      console.error(this.state.form3.address);
+      console.error(parser.parseLocation(this.state.form3.address));
       let order = this.state;
+      order.first_name = this.state.form3.first_name;
+      order.last_name = this.state.form3.last_name;
       order.stringy_id = this.state.form.stringy_id;
       order.tension = this.state.form2.tension;
       order.instructions = this.state.form2.instructions;
@@ -119,7 +125,7 @@ class OrderForm extends React.Component {
       // console.log(taskRequest);
       // taskRequest.task_id = this.props.params.taskId;
       this.props.createOrder({order});
-      hashHistory.push("/")
+      hashHistory.push("/");
     }
   }
 
@@ -149,26 +155,26 @@ class OrderForm extends React.Component {
       this.setState({stage: e.target.id});
     }
   }
-  handleSubmit(e) {
+  handleSubmit() {
     // e.preventDefault();
     let order = this.state;
-    order.price = this.state.price + this.props.stringies[this.state.stringy_id-1].price;
+    order.price = this.state.total_price + this.props.stringies[this.state.stringy_id-1].price;
+    console.error(this.state.form3.address);
+    console.error(parser.parseLocation(this.state.form3.address));
+    order.first_name = this.state.form3.first_name;
+    order.last_name = this.state.form3.last_name;
     order.stringy_id = this.state.form.stringy_id;
-    //this.state.form.stringy_id;
     order.tension = this.state.form2.tension;
     order.instructions = this.state.form2.instructions;
+    order.details = this.state.form.details;
     order.address_line_one = "Test";
     order.city = "Test1";
     order.state = "NJ";
     order.zip_code = "Fake";
+    // console.log(taskRequest);
+    // taskRequest.task_id = this.props.params.taskId;
     this.props.createOrder({order});
-    // this.setState({
-    //   address: "",
-    //   tasker_id: "",
-    //   date: moment(),
-    //   details: "",
-    //   hours: 1
-    // });
+    hashHistory.push("/");
   }
 
   renderErrors() {
@@ -214,7 +220,7 @@ class OrderForm extends React.Component {
     } else {
       stage = <ThirdForm nextStage={this.nextStage} price={this.state.total_price} submit={this.handleSubmit}
       instructions={this.state.form2.instructions} tension={this.state.form2.tension} stringy_id={this.state.form.stringy_id}
-      address={"this.props.form.address"} stringies={this.props.stringies}/>;
+      address={"this.props.form.address"} stringies={this.props.stringies} updateForm={ this.updateForm3 } />;
     }
 
     return (
@@ -225,9 +231,9 @@ class OrderForm extends React.Component {
         <nav className='stage-header'>
         <Grid>
           <Row className='show-grid'>
-            <Col onClick={this.goBack} lg={4} md={4} sm={4} id='1' className='text-center stage-active stage-items-group'>Pick your string </Col>
-            <Col onClick={this.goBack} lg={4} md={4} sm={4} className="text-center stage-items-group" id='2'>Set your tension</Col>
-            <Col onClick={this.goBack} lg={4} md={4} sm={4} className="text-center stage-items-group" id='3'> Place order</Col>
+            <Col lg={4} md={4} sm={4} id='1' className='text-center stage-active stage-items-group'>Pick your string </Col>
+            <Col lg={4} md={4} sm={4} className="text-center stage-items-group" id='2'>Set your tension</Col>
+            <Col lg={4} md={4} sm={4} className="text-center stage-items-group" id='3'> Place order</Col>
           </Row>
         </Grid>
         </nav>
@@ -238,7 +244,8 @@ class OrderForm extends React.Component {
           {stage}
             </Col>
           <Col lg={4} md={4} sm={4}>
-           <PricingColumn price={ this.stringy_price } currentUser={ this.props.currentUser } stringy_id={ this.state.form.stringy_id } stringies={this.props.stringies}/>
+           <PricingColumn price={ this.stringy_price } currentUser={ this.props.currentUser } stringy_id={ this.state.form.stringy_id } stringies={this.props.stringies}
+                          />
           </Col>
           </Row>
         </Grid>

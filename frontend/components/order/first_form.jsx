@@ -8,7 +8,6 @@ class FirstForm extends React.Component {
     super(props);
     this.state = {
       stringy_id: null,
-      stringy_price: null,
       address: "",
       editing: "-1"
     };
@@ -37,7 +36,6 @@ class FirstForm extends React.Component {
   setString(e) {
     e.preventDefault();
     this.props.updateForm({stringy_id: parseInt(e.target.id)+1});
-    // this.props.updateForm({stringy_price: this.props.stringies[parseInt(e.target.id)].price});
     this.setState({stringy_id: parseInt(e.target.id)+1});
   }
 
@@ -46,10 +44,8 @@ class FirstForm extends React.Component {
     if (!e.target.className.includes("sb")) {
       this.setState({editing: e.target.id});
       if (e.target.id == 4) {
-        console.error("five")
         this.props.updateForm({stringy_id: 13});
-        this.props.updateForm({stringy_price: 0});
-        this.setState({stringy_id: 13});
+        this.setState({stringy_id: 13})
       }
     }
   }

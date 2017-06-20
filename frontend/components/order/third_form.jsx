@@ -11,17 +11,27 @@ class ThirdForm extends React.Component {
       instructions: this.props.instructions,
       stringy_id: this.props.stringy_id,
       address: "",
+      first_name: "",
+      last_name: "",
       tension: this.props.tension,
-      price: this.props.price,
     };
     this.onChange = (address) => this.setState({ address });
+    this.handleChange = this.handleChange.bind(this);
     this.onToken = this.onToken.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
   }
 
+  handleChange(field) {
+    return e => {
+      this.setState({[field]: e.target.value});
+      this.props.updateForm(this.state);
+    };
+  }
+
   onToken(token) {
-    token.amount = Number(this.state.price);
+    this.props.updateForm(this.state);
+    token.amount = Number(this.props.price);
     console.log(JSON.stringify(token));
     fetch('/api/charges', {
       method: 'POST',
@@ -36,6 +46,7 @@ class ThirdForm extends React.Component {
       console.log(token);
       if (response.status == 200) {
         console.log("Success");
+        this.props.submit;
       }
       // response.json();
     });
@@ -51,14 +62,18 @@ class ThirdForm extends React.Component {
 
 
   render() {
+    const inputProps = {
+      value: this.state.address,
+      onChange: this.onChange,
+    }
     let stripe = null;
     if (this.state.address) {
       stripe = (<StripeCheckout
         token={this.onToken}
-        amount={Number(this.state.price)*100}
+        amount={Number(this.props.price)*100}
         currency="USD"
         name="Fast Racquet Inc."
-        shippingAddress={true}
+        shippingAddress={false}
         billingAddress={true}
         zipCode={true}
         stripeKey="pk_test_L5srPMcfjPhbApU6CKVQs7lm"
@@ -68,11 +83,19 @@ class ThirdForm extends React.Component {
 
     return (
       <Grid className="request-details" onSubmit={this.handleSubmit}>
+        <InputGroup>
+          <FormControl type="textarea" value={this.state.first_name} placeholder="First Name"
+                       onChange={this.handleChange("first_name")} className=""/>
+        </InputGroup>
+        <InputGroup>
+          <FormControl type="textarea" value={this.state.last_name} placeholder="Last Name"
+                       onChange={this.handleChange("last_name")}/>
+        </InputGroup>
 
-        <label>
-          <PlacesAutocomplete value={this.state.address} onChange={this.onChange} autocompleteItem={AutoCompleteItem}/>
+        <InputGroup>
+          <PlacesAutocomplete inputProps={inputProps} autocompleteItem={AutoCompleteItem}/>
 
-        </label>
+        </InputGroup>
         <div className='third-form'>
           <h1> Are these details correct? </h1>
           <p>Stringy{this.props.stringy_id}</p>
