@@ -1,26 +1,40 @@
+// TODO FIX THIS WITH BOOTSTRAP
 import React from 'react';
-import moment from 'moment';
-import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
+import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup, Grid } from 'react-bootstrap';
+import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete';
 import StripeCheckout from 'react-stripe-checkout';
-// import PaymentForm from './payment';
 
 class ThirdForm extends React.Component {
   constructor(props) {
     super(props);
+    this.stripe_paid = false;
     this.state = {
       instructions: this.props.instructions,
       stringy_id: this.props.stringy_id,
-      address: this.props.address,
+      address: "",
+      first_name: "",
+      last_name: "",
       tension: this.props.tension,
-      // date: this.props.date,
-      price: this.props.price,
+      stripe_paid: false,
     };
+    this.onChange = (address) => this.setState({ address });
+    this.handleChange = this.handleChange.bind(this);
     this.onToken = this.onToken.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
+  }
+
+  handleChange(field) {
+    return e => {
+      this.setState({[field]: e.target.value});
+      this.props.updateForm(this.state);
+    };
   }
 
   onToken(token) {
-    token.amount = Number(this.state.price);
+    let that = this;
+    this.props.updateForm(this.state);
+    token.amount = Number(this.props.price);
     console.log(JSON.stringify(token));
     fetch('/api/charges', {
       method: 'POST',
@@ -32,11 +46,12 @@ class ThirdForm extends React.Component {
       'Access-Control-Allow-Headers':'X-Requested-With'
     },
     }).then(response => {
-      console.log(response);
+      console.log(token);
       if (response.status == 200) {
         console.log("Success");
+        that.stripe_paid = true;
       }
-      response.json();
+      // response.json();
     });
   }
 
@@ -45,35 +60,56 @@ class ThirdForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // this.props.updateForm(this.state);
-    // stripe.card.createToken(e.currentTarget, function (status, response) {
-    //   console.log( status, response );
-    // });
     this.props.nextStage(e);
   }
 
 
   render() {
-    return (
-      <div className="request-details" onSubmit={this.handleSubmit}>
-
-
-      <div className='third-form'>
-        <h1> Are these details correct? </h1>
-        <p>Stringy{this.props.stringy_id}</p>
-        <p>Tension <br/><strong>{this.props.tension}</strong></p>
-        <p>Place <br/><strong>{this.props.address}</strong></p>
-        <p>Instruction <br/><strong>{this.props.instructions}</strong></p>
-        <input className='submit' type="submit" value="Confirm & Book"/>
-      </div>
-
-      <StripeCheckout
+    const inputProps = {
+      value: this.state.address,
+      onChange: this.onChange,
+    }
+    let stripe = null;
+    if (this.state.address) {
+      stripe = (<StripeCheckout
         token={this.onToken}
-        amount={Number(this.state.price)*100}
+        amount={Number(this.props.price)*100}
         currency="USD"
         name="Fast Racquet Inc."
+        shippingAddress={false}
+        billingAddress={true}
+        zipCode={true}
         stripeKey="pk_test_L5srPMcfjPhbApU6CKVQs7lm"
-      />
-      </div>
+      />);
+    }
+    const AutoCompleteItem = ({ suggestion }) => (<div><i className="fa fa-map-marker"/>{suggestion}</div>)
+
+    return (
+      <Grid className="request-details" onSubmit={this.handleSubmit}>
+        <InputGroup>
+          <FormControl type="textarea" value={this.state.first_name} placeholder="First Name"
+                       onChange={this.handleChange("first_name")} className=""/>
+        </InputGroup>
+        <InputGroup>
+          <FormControl type="textarea" value={this.state.last_name} placeholder="Last Name"
+                       onChange={this.handleChange("last_name")}/>
+        </InputGroup>
+
+        <InputGroup>
+          <PlacesAutocomplete inputProps={inputProps} autocompleteItem={AutoCompleteItem}/>
+
+        </InputGroup>
+        <div className='third-form'>
+          <h1> Are these details correct? </h1>
+          <p>Stringy{this.props.stringy_id}</p>
+          <p>Tension <br/><strong>{this.props.tension}</strong></p>
+          <p>Place <br/><strong>{this.props.address}</strong></p>
+          <p>Instruction <br/><strong>{this.props.instructions}</strong></p>
+          <Button disabled={!this.stripe_paid} className='submit' type="submit" value="Confirm & Book"/>
+        </div>
+        {stripe}
+
+      </Grid>
     );
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
+import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup, Image } from 'react-bootstrap';
 import SecondHeaderContainer from './second_header_container';
 
 class AboutPage extends React.Component {

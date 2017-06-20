@@ -1,51 +1,62 @@
 import React from 'react';
-// import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete';
-import moment from 'moment';
+import parser from 'parse-address';
 import { Grid, Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup } from 'react-bootstrap';
+import { hashHistory } from 'react-router';
 import SecondHeaderContainer from '../shared/second_header_container';
-
-// import DatePicker from 'react-datepicker';
-// import TaskerIndexContainer from '../tasker/tasker_index_container';
 import FirstForm from './first_form';
 import SecondForm from './second_form';
 import ThirdForm from './third_form';
-import { hashHistory } from 'react-router'
+import PricingColumn from './pricing';
 
 class OrderForm extends React.Component {
   constructor(props) {
     super(props);
+    let userID = null;
+    this.firstBuy = false
+    if (this.props.currentUser) {
+      userID = this.props.currentUser.id;
+      if (this.props.currentUser.first_buy) {
+        this.firstBuy = true;
+      }
+    }
+    let total_price = 40.00;
+    if (this.firstBuy) {
+      total_price /= 2;
+    }
     this.state = {
       stage: 1,
-      user_id: 1,
-      first_name: "placeholder",
-      last_name: "placeholder",
-      // task_id: this.props.params.taskId,
-      // address: "",
-      price: "40.00",
+      user_id: userID,
+      first_name: null,
+      last_name: null,
+      total_price: total_price,
       form: {
         stringy_id: null,
-        address: null
       },
       form2: {
         tension: null,
-        instructions: null
+        instructions: null,
       },
-      // details: "",
+      form3: {
+        first_name: null,
+        last_name: null,
+        address: null,
+      },
       errors: null
     };
-
+    this.stringy_price = null;
     this.onChange = (address) => this.setState({ address });
     this.changeDate = this.changeDate.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateForm = this.updateForm.bind(this);
     this.updateForm2 = this.updateForm2.bind(this);
+    this.updateForm3 = this.updateForm3.bind(this);
     this.nextStage = this.nextStage.bind(this);
+    this.goBack = this.goBack.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchStringies();
-    // this.props.fetchTaskers();
   }
 
   componentWillMount() {
@@ -57,17 +68,10 @@ class OrderForm extends React.Component {
     if (!this.state.form.stringy_id) {
       this.missingFields.push("Please choose a string. ");
     }
-    // if (!this.state.form.task_id) {
-    //   this.missingFields.push("Please choose a task. ");
-    // }
-    // if (!this.state.form.address) {
-    //   this.missingFields.push("Please choose an address.");
-    // }
     if (this.missingFields.length > 0) {
-      // this.displayMissing();
+      return null;
     }
     return (this.state.form.stringy_id);
-    //&& this.state.form.task_id && this.state.form.address
   }
 
   secondFormComplete() {
@@ -75,19 +79,22 @@ class OrderForm extends React.Component {
     if (!this.state.form2.tension) {
       this.missingFields.push("You must set a tension");
     }
-    // if (!this.state.form2.date) {
-    //   this.missingFields.push("You must choose a day");
-    // }
-    // if (!this.state.form2.hours) {
-    //   this.missingFields.push("You must choose a time frame");
-    // }
     if (this.missingFields.length > 0) {
-      // this.displayMissing();
+      return null;
     }
     return (this.state.form2.tension);
-    // && this.state.form2.tasker_id && this.state.form2.hours
   }
 
+  thirdFormComplete() {
+    this.missingFields = [];
+    if (!this.state.form.address) {
+      this.missingFields.push("Please choose an address.");
+      return null;
+    }
+    return this.state.form3.address;
+
+  }
+  //TODO Why am i not using handlesubmit??
   nextStage(e) {
     e.preventDefault();
     if ((this.state.stage === 1) && this.formComplete()) {
@@ -100,9 +107,13 @@ class OrderForm extends React.Component {
       $('#2').removeClass('stage-active');
       $('#2').addClass('stage-complete');
       $('#3').addClass('stage-active');
-    } else if (this.state.stage === 3){
+    } else if (this.state.stage === 3 && this.thirdFormComplete()){
       // this.handleSubmit();
+      console.error(this.state.form3.address);
+      console.error(parser.parseLocation(this.state.form3.address));
       let order = this.state;
+      order.first_name = this.state.form3.first_name;
+      order.last_name = this.state.form3.last_name;
       order.stringy_id = this.state.form.stringy_id;
       order.tension = this.state.form2.tension;
       order.instructions = this.state.form2.instructions;
@@ -114,7 +125,7 @@ class OrderForm extends React.Component {
       // console.log(taskRequest);
       // taskRequest.task_id = this.props.params.taskId;
       this.props.createOrder({order});
-      hashHistory.push("/")
+      hashHistory.push("/");
     }
   }
 
@@ -126,6 +137,10 @@ class OrderForm extends React.Component {
     this.setState({form2: obj});
   }
 
+  updateForm3(obj) {
+    this.setState({form3: obj});
+  }
+
   handleChange(field) {
     return e => this.setState({[field]: e.target.value});
   }
@@ -134,30 +149,32 @@ class OrderForm extends React.Component {
     this.setState({ date: date});
   }
 
-  nextForm(e) {
+  goBack(e) {
     e.preventDefault();
+    if (this.state.stage > e.target.id) {
+      this.setState({stage: e.target.id});
+    }
   }
-
   handleSubmit(e) {
     // e.preventDefault();
     let order = this.state;
     order.price = this.state.price + this.props.stringies[this.state.stringy_id-1].price;
+    console.error(this.state.form3.address);
+    console.error(parser.parseLocation(this.state.form3.address));
+    order.first_name = this.state.form3.first_name;
+    order.last_name = this.state.form3.last_name;
     order.stringy_id = this.state.form.stringy_id;
-    //this.state.form.stringy_id;
     order.tension = this.state.form2.tension;
     order.instructions = this.state.form2.instructions;
+    order.details = this.state.form.details;
     order.address_line_one = "Test";
     order.city = "Test1";
     order.state = "NJ";
     order.zip_code = "Fake";
+    // console.log(taskRequest);
+    // taskRequest.task_id = this.props.params.taskId;
     this.props.createOrder({order});
-    // this.setState({
-    //   address: "",
-    //   tasker_id: "",
-    //   date: moment(),
-    //   details: "",
-    //   hours: 1
-    // });
+    hashHistory.push("/");
   }
 
   renderErrors() {
@@ -181,30 +198,35 @@ class OrderForm extends React.Component {
   render() {
     let stringies;
     if (!this.props.stringies){
-      return (<div>Hi</div>)
+      return (<div>Hi</div>);
     }
-    if (this.props.stringies) {
-         stringies = this.props.stringies.map((stringy, i)=>(
-        <option key={i} value={stringy.id}>{stringy.description}</option>
-      ));
+    if (this.state.form.stringy_id) {
+      this.stringy_price = this.props.stringies[this.state.form.stringy_id-1].price;
     }
+    // if (this.props.stringies) {
+    //      stringies = this.props.stringies.map((stringy, i)=>(
+    //     <option key={i} value={stringy.id}>{stringy.description}</option>
+    //   ));
+    // }
+
+    console.log(this.state.form.stringy_id);
 
 
     let stage;
     if (this.state.stage === 1) {
-      stage = <FirstForm nextStage={this.nextStage} updateForm={this.updateForm} stringies={this.props.stringies}/>
+      stage = <FirstForm nextStage={this.nextStage} updateForm={ this.updateForm } stringies={this.props.stringies}/>
     } else if (this.state.stage === 2) {
       stage = <SecondForm nextStage={this.nextStage} updateForm={this.updateForm2} stringies={this.props.stringies}/>
     } else {
-      stage = <ThirdForm nextStage={this.nextStage} price={this.state.price} submit={this.handleSubmit}
+      stage = <ThirdForm nextStage={this.nextStage} price={this.state.total_price} submit={this.handleSubmit}
       instructions={this.state.form2.instructions} tension={this.state.form2.tension} stringy_id={this.state.form.stringy_id}
-      address={"this.props.form.address"} stringies={this.props.stringies}/>
+      address={"this.props.form.address"} stringies={this.props.stringies} updateForm={ this.updateForm3 } />;
     }
 
     return (
       <section className="taskRequest-container">
         <SecondHeaderContainer />
-        <div id="alert"></div> { //TODO FIX THIS??? ERRORS
+        <div id="alert"></div> { // TODO FIX THIS??? ERRORS
         }
         <nav className='stage-header'>
         <Grid>
@@ -215,13 +237,20 @@ class OrderForm extends React.Component {
           </Row>
         </Grid>
         </nav>
-        <div className="booking-form">
+        <Grid className="booking-form">
           <p className="missing-fields">{this.missingFields}</p>
+          <Row>
+            <Col lg={8} md={8} sm={8}>
           {stage}
-        </div>
+            </Col>
+          <Col lg={4} md={4} sm={4}>
+           <PricingColumn price={ this.stringy_price } currentUser={ this.props.currentUser } stringy_id={ this.state.form.stringy_id } stringies={this.props.stringies}
+                          />
+          </Col>
+          </Row>
+        </Grid>
       </section>
-    )
-
+    );
   }
 }
 

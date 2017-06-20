@@ -1,7 +1,5 @@
 import React from 'react';
 // import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete';
-import moment from 'moment';
-import DatePicker from 'react-datepicker';
 import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup, Grid } from 'react-bootstrap';
 
 
@@ -21,7 +19,7 @@ class SecondForm extends React.Component {
     return e => {
       this.setState({[field]: e.target.value});
       this.props.updateForm(this.state);
-    }
+    };
   }
 
 
@@ -46,22 +44,27 @@ class SecondForm extends React.Component {
   render() {
       return (
         <form className="second-form" onSubmit={this.handleSubmit}>
-          <Grid>
-          <h4>Choose a tension</h4>
-              <InputGroup>
-              <FormControl type="number" value={this.state.tension} placeholder="lbs"
-              onChange={this.handleChange("tension")} className=""
-              min="35.0" max="80.0" step="0.5"/>
-              </InputGroup>
-              <Col>Any special instructions?</Col>
-              <InputGroup>
-                <FormControl type="textarea" value={this.state.instructions} placeholder="Optional"
-                onChange={this.handleChange("instructions")}/>
-              </InputGroup>
-              <Button disabled={!this.state.tension} className="submit" type="submit" value="Save">Save
-              </Button>
-            </Grid>
-          </form>
+          <Grid className="of1">
+
+            <Row>
+              <Col lg={8} md={8}>
+                <h4>Choose a tension</h4>
+                <InputGroup>
+                  <FormControl type="number" value={this.state.tension} placeholder="lbs"
+                               onChange={this.handleChange("tension")} className=""
+                               min="35.0" max="80.0" step="0.5"/>
+                </InputGroup>
+                <Col>Any special instructions?</Col>
+                <InputGroup>
+                  <FormControl type="textarea" value={this.state.instructions} placeholder="Optional"
+                               onChange={this.handleChange("instructions")}/>
+                </InputGroup>
+                <Button disabled={!this.state.tension} className="submit" type="submit" value="Save">Save
+                </Button>
+              </Col>
+            </Row>
+          </Grid>
+        </form>
     );
   }
 }
