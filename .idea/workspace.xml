@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7311ef10-d378-4f2f-b107-fc62bf35bed3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/components/order/first_form.jsx" afterPath="$PROJECT_DIR$/frontend/components/order/first_form.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/components/order/order_form.jsx" afterPath="$PROJECT_DIR$/frontend/components/order/order_form.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/components/order/pricing.jsx" afterPath="$PROJECT_DIR$/frontend/components/order/pricing.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/components/order/third_form.jsx" afterPath="$PROJECT_DIR$/frontend/components/order/third_form.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,8 +22,8 @@
       <file leaf-file-name="order_form.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/components/order/order_form.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="222" column="107" lean-forward="false" selection-start-line="222" selection-start-column="107" selection-end-line="222" selection-end-column="107" />
+            <state relative-caret-position="153">
+              <caret line="98" column="20" lean-forward="true" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -46,8 +44,8 @@
       <file leaf-file-name="third_form.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/components/order/third_form.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="48" column="22" lean-forward="true" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+            <state relative-caret-position="2354">
+              <caret line="107" column="33" lean-forward="false" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="33" />
               <folding>
                 <element signature="e#32#58#0" expanded="true" />
               </folding>
@@ -58,8 +56,8 @@
       <file leaf-file-name="second_form.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/components/order/second_form.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="342">
+              <caret line="48" column="17" lean-forward="true" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -127,10 +125,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="88" />
-    <option name="y" value="-2" />
-    <option name="width" value="1833" />
-    <option name="height" value="1083" />
+    <option name="x" value="72" />
+    <option name="y" value="-8" />
+    <option name="width" value="1849" />
+    <option name="height" value="1089" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -345,13 +343,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31482000" />
+    <option name="totallyTimeSpent" value="32584000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="88" y="-2" width="1833" height="1083" extended-state="6" />
+    <frame x="72" y="-8" width="1849" height="1089" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959038" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24742827" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -794,14 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/order/second_form.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/order/first_form.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-66">
@@ -812,18 +802,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/order/order_form.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="222" column="107" lean-forward="false" selection-start-line="222" selection-start-column="107" selection-end-line="222" selection-end-column="107" />
+        <state relative-caret-position="153">
+          <caret line="98" column="20" lean-forward="true" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/order/second_form.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="48" column="17" lean-forward="true" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/order/third_form.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="48" column="22" lean-forward="true" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+        <state relative-caret-position="2354">
+          <caret line="107" column="33" lean-forward="false" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="33" />
           <folding>
             <element signature="e#32#58#0" expanded="true" />
           </folding>

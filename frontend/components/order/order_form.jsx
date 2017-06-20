@@ -155,10 +155,10 @@ class OrderForm extends React.Component {
       this.setState({stage: e.target.id});
     }
   }
-  handleSubmit() {
+  handleSubmit(e) {
     // e.preventDefault();
     let order = this.state;
-    order.price = this.state.total_price + this.props.stringies[this.state.stringy_id-1].price;
+    order.price = this.state.price + this.props.stringies[this.state.stringy_id-1].price;
     console.error(this.state.form3.address);
     console.error(parser.parseLocation(this.state.form3.address));
     order.first_name = this.state.form3.first_name;

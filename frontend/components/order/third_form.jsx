@@ -7,6 +7,7 @@ import StripeCheckout from 'react-stripe-checkout';
 class ThirdForm extends React.Component {
   constructor(props) {
     super(props);
+    this.stripe_paid = false;
     this.state = {
       instructions: this.props.instructions,
       stringy_id: this.props.stringy_id,
@@ -14,6 +15,7 @@ class ThirdForm extends React.Component {
       first_name: "",
       last_name: "",
       tension: this.props.tension,
+      stripe_paid: false,
     };
     this.onChange = (address) => this.setState({ address });
     this.handleChange = this.handleChange.bind(this);
@@ -30,6 +32,7 @@ class ThirdForm extends React.Component {
   }
 
   onToken(token) {
+    let that = this;
     this.props.updateForm(this.state);
     token.amount = Number(this.props.price);
     console.log(JSON.stringify(token));
@@ -46,7 +49,7 @@ class ThirdForm extends React.Component {
       console.log(token);
       if (response.status == 200) {
         console.log("Success");
-        this.props.submit;
+        that.stripe_paid = true;
       }
       // response.json();
     });
@@ -102,7 +105,7 @@ class ThirdForm extends React.Component {
           <p>Tension <br/><strong>{this.props.tension}</strong></p>
           <p>Place <br/><strong>{this.props.address}</strong></p>
           <p>Instruction <br/><strong>{this.props.instructions}</strong></p>
-          <input className='submit' type="submit" value="Confirm & Book"/>
+          <Button disabled={!this.stripe_paid} className='submit' type="submit" value="Confirm & Book"/>
         </div>
         {stripe}
 
