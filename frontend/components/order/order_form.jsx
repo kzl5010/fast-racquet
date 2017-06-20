@@ -203,7 +203,7 @@ class OrderForm extends React.Component {
     //   ));
     // }
 
-    console.log(this.stringy_price);
+    console.log(this.state.form.stringy_id);
 
 
     let stage;
@@ -214,7 +214,7 @@ class OrderForm extends React.Component {
     } else {
       stage = <ThirdForm nextStage={this.nextStage} price={this.state.total_price} submit={this.handleSubmit}
       instructions={this.state.form2.instructions} tension={this.state.form2.tension} stringy_id={this.state.form.stringy_id}
-      address={"this.props.form.address"} stringies={this.props.stringies}/>
+      address={"this.props.form.address"} stringies={this.props.stringies}/>;
     }
 
     return (
@@ -238,7 +238,7 @@ class OrderForm extends React.Component {
           {stage}
             </Col>
           <Col lg={4} md={4} sm={4}>
-           <PricingColumn stringy_price={ this.stringy_price } currentUser={ this.props.currentUser } stringy_id={ this.state.stringy_id }/>
+           <PricingColumn price={ this.stringy_price } currentUser={ this.props.currentUser } stringy_id={ this.state.form.stringy_id } stringies={this.props.stringies}/>
           </Col>
           </Row>
         </Grid>

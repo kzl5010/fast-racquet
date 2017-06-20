@@ -43,10 +43,10 @@ class FirstForm extends React.Component {
 
   setEdit(e) {
     e.preventDefault();
-    console.log(e.target)
     if (!e.target.className.includes("sb")) {
       this.setState({editing: e.target.id});
       if (e.target.id == 4) {
+        console.error("five")
         this.props.updateForm({stringy_id: 13});
         this.props.updateForm({stringy_price: 0});
         this.setState({stringy_id: 13});
@@ -86,7 +86,7 @@ class FirstForm extends React.Component {
   }
 
   render() {
-
+    console.log(this.state.editing);
     // const AutocompleteItem = ({ suggestion }) => (<div><i className="fa fa-map-marker"/>{suggestion}</div>)
     let that = this;
     if (this.props.stringies) {
@@ -134,16 +134,17 @@ class FirstForm extends React.Component {
     // }
     return (
       <form className="first-form" onSubmit={this.handleSubmit}>
-          <div id="alert">{  this.renderErrors()   } </div>
-            <Grid className="of1">
-            <Row>
+        <div id="alert">{  this.renderErrors()   }
+        </div>
+        <Grid className="of1">
+          <Row>
             <Col lg={8} md={8}>
-            <h1><small>What kind of string do you need?</small></h1>
-            {this.stringList}
+              <h1><small>What kind of string do you need?</small></h1>
+              {this.stringList}
             </Col>
-            </Row>
-            <Button className="submit" type="submit" value="Save" disabled={!this.state.stringy_id}>Save</Button>
-            </Grid>
+          </Row>
+          <Button className="submit" type="submit" value="Save" disabled={!this.state.stringy_id}>Save</Button>
+        </Grid>
       </form>
     )
   }

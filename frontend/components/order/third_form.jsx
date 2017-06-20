@@ -10,12 +10,14 @@ class ThirdForm extends React.Component {
     this.state = {
       instructions: this.props.instructions,
       stringy_id: this.props.stringy_id,
-      address: null,
+      address: "",
       tension: this.props.tension,
       price: this.props.price,
     };
+    this.onChange = (address) => this.setState({ address });
     this.onToken = this.onToken.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
 
   onToken(token) {
@@ -49,20 +51,9 @@ class ThirdForm extends React.Component {
 
 
   render() {
-    return (
-      <Grid className="request-details" onSubmit={this.handleSubmit}>
-
-
-      <div className='third-form'>
-        <h1> Are these details correct? </h1>
-        <p>Stringy{this.props.stringy_id}</p>
-        <p>Tension <br/><strong>{this.props.tension}</strong></p>
-        <p>Place <br/><strong>{this.props.address}</strong></p>
-        <p>Instruction <br/><strong>{this.props.instructions}</strong></p>
-        <input className='submit' type="submit" value="Confirm & Book"/>
-      </div>
-
-      <StripeCheckout
+    let stripe = null;
+    if (this.state.address) {
+      stripe = (<StripeCheckout
         token={this.onToken}
         amount={Number(this.state.price)*100}
         currency="USD"
@@ -71,7 +62,27 @@ class ThirdForm extends React.Component {
         billingAddress={true}
         zipCode={true}
         stripeKey="pk_test_L5srPMcfjPhbApU6CKVQs7lm"
-      />
+      />);
+    }
+    const AutoCompleteItem = ({ suggestion }) => (<div><i className="fa fa-map-marker"/>{suggestion}</div>)
+
+    return (
+      <Grid className="request-details" onSubmit={this.handleSubmit}>
+
+        <label>
+          <PlacesAutocomplete value={this.state.address} onChange={this.onChange} autocompleteItem={AutoCompleteItem}/>
+
+        </label>
+        <div className='third-form'>
+          <h1> Are these details correct? </h1>
+          <p>Stringy{this.props.stringy_id}</p>
+          <p>Tension <br/><strong>{this.props.tension}</strong></p>
+          <p>Place <br/><strong>{this.props.address}</strong></p>
+          <p>Instruction <br/><strong>{this.props.instructions}</strong></p>
+          <input className='submit' type="submit" value="Confirm & Book"/>
+        </div>
+        {stripe}
+
       </Grid>
     );
   }

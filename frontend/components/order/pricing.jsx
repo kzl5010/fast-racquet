@@ -5,30 +5,35 @@ import React from 'react';
 class PricingColumn extends React.Component {
   constructor(props) {
     super(props);
-    let first_buy = false;
+    this.first_buy = false;
     if (this.props.currentUser) {
       if (this.props.currentUser.first_buy) {
-        first_buy = true;
+        this.first_buy = true;
       }
     }
     this.state = {
-      first_buy: first_buy,
-      price: this.props.price,
       stringy_id: this.props.stringy_id,
     };
 
   }
 
   render() {
-    if (this.state.stringy_id) {
-      (<Row>
-        {this.props.stringies[this.state.stringy_id].price}
-      </Row>)
+    let show = null,
+        stringy = null;
+    if (this.props.price) {
+      // console.error(this.props.stringy_id);
+      show = (<div>
+        {this.props.stringies[this.props.stringy_id-1].description}: <br />
+        $ {this.props.price}
+      </div>);
     }
     return (
-      <Row>Hello
-      1231290
-      {this.props.price}
+      <Row className="right-floating">
+        <Col lg={12}>
+        <h4>Your Order</h4>
+          <div>String job<br/>$ 40.00</div>
+        {show}
+        </Col>
       </Row>);
 
   }
