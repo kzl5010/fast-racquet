@@ -15,7 +15,7 @@ class ThirdForm extends React.Component {
       first_name: "",
       last_name: "",
       tension: this.props.tension,
-      stripe_paid: false,
+      // stripe_paid: false,
     };
     this.onChange = (address) => this.setState({ address });
     this.handleChange = this.handleChange.bind(this);
@@ -59,7 +59,7 @@ class ThirdForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // this.props.updateForm(this.state);
+    this.props.updateForm(this.state);
     this.props.nextStage(e);
   }
 
@@ -68,8 +68,9 @@ class ThirdForm extends React.Component {
     const inputProps = {
       value: this.state.address,
       onChange: this.onChange,
-    }
-    let stripe = null;
+    };
+    let stripe = null,
+      place_order = null;
     if (this.state.address) {
       stripe = (<StripeCheckout
         token={this.onToken}
@@ -82,10 +83,15 @@ class ThirdForm extends React.Component {
         stripeKey="pk_test_L5srPMcfjPhbApU6CKVQs7lm"
       />);
     }
+    if (this.stripe_paid) {
+      console.error("WORKS");
+      place_order = <Button className='submit' type="submit" value="Confirm & Book"/>;
+    }
     const AutoCompleteItem = ({ suggestion }) => (<div><i className="fa fa-map-marker"/>{suggestion}</div>)
 
     return (
-      <Grid className="request-details" onSubmit={this.handleSubmit}>
+      <form  className="third-form" onSubmit={this.handleSubmit}>
+      <Grid className="request-details">
         <InputGroup>
           <FormControl type="textarea" value={this.state.first_name} placeholder="First Name"
                        onChange={this.handleChange("first_name")} className=""/>
@@ -96,7 +102,8 @@ class ThirdForm extends React.Component {
         </InputGroup>
 
         <InputGroup>
-          <PlacesAutocomplete inputProps={inputProps} autocompleteItem={AutoCompleteItem}/>
+          <FormControl type="textarea" value={this.state.address} placeholder="Last Name" onChange={this.handleChange("address")} />
+          {/*<PlacesAutocomplete inputProps={inputProps} autocompleteItem={AutoCompleteItem}/>*/}
 
         </InputGroup>
         <div className='third-form'>
@@ -110,6 +117,7 @@ class ThirdForm extends React.Component {
         {stripe}
 
       </Grid>
+      </form>
     );
   }
 }

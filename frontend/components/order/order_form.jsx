@@ -87,7 +87,7 @@ class OrderForm extends React.Component {
 
   thirdFormComplete() {
     this.missingFields = [];
-    if (!this.state.form.address) {
+    if (!this.state.form3.address) {
       this.missingFields.push("Please choose an address.");
       return null;
     }
@@ -196,7 +196,6 @@ class OrderForm extends React.Component {
   }
 
   render() {
-    let stringies;
     if (!this.props.stringies){
       return (<div>Hi</div>);
     }
@@ -220,7 +219,7 @@ class OrderForm extends React.Component {
     } else {
       stage = <ThirdForm nextStage={this.nextStage} price={this.state.total_price} submit={this.handleSubmit}
       instructions={this.state.form2.instructions} tension={this.state.form2.tension} stringy_id={this.state.form.stringy_id}
-      address={"this.props.form.address"} stringies={this.props.stringies} updateForm={ this.updateForm3 } />;
+      stringies={this.props.stringies} updateForm={ this.updateForm3 } />;
     }
 
     return (

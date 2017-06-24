@@ -22,7 +22,7 @@ class FirstForm extends React.Component {
                               "Polys are commonly used by pros and advanced players who have aggressive swings.",
                               "Multifilaments are great for players with less aggressive swings who are looking for a soft feel.",
                               "A hybrid usually blends a tougher string with a softer string to maximize durability and comfort.",
-                              "Just send the string (40 feet) in with your racquet. We'll handle the rest."]
+                              "Just send the string (40 feet) in with your racquet. We'll handle the rest."];
   }
 
 
@@ -48,10 +48,6 @@ class FirstForm extends React.Component {
         this.setState({stringy_id: 13})
       }
     }
-  }
-
-  nextForm(e) {
-    e.preventDefault();
   }
 
   handleSubmit(e) {
@@ -83,7 +79,6 @@ class FirstForm extends React.Component {
 
   render() {
     console.log(this.state.editing);
-    // const AutocompleteItem = ({ suggestion }) => (<div><i className="fa fa-map-marker"/>{suggestion}</div>)
     let that = this;
     if (this.props.stringies) {
       that.stringList = (<ButtonGroup>
@@ -117,12 +112,11 @@ class FirstForm extends React.Component {
               }
             })}
             </ButtonGroup>
-          </Button></Col>)
+          </Button></Col>);
         })}
-        </ButtonGroup>)
+        </ButtonGroup>);
     }
-    let stringOptions = null
-    // console.log(that.stringList);
+    let stringOptions = null;
     // if (this.props.tasks) {
     //   taskOptions = this.props.tasks.map((task, i) => (
     //     <option key={i} value={task.id}>{task.title}</option>
