@@ -109,7 +109,6 @@ class OrderForm extends React.Component {
       $('#3').addClass('stage-active');
     } else if (this.state.stage === 3 && this.thirdFormComplete()){
       // this.handleSubmit();
-      console.error(this.state.form3.address);
       console.error(parser.parseLocation(this.state.form3.address));
       let order = this.state;
       order.first_name = this.state.form3.first_name;
@@ -117,13 +116,12 @@ class OrderForm extends React.Component {
       order.stringy_id = this.state.form.stringy_id;
       order.tension = this.state.form2.tension;
       order.instructions = this.state.form2.instructions;
+      order.price = this.state.total_price;
       order.details = this.state.form.details;
       order.address_line_one = "Test";
       order.city = "Test1";
       order.state = "NJ";
       order.zip_code = "Fake";
-      // console.log(taskRequest);
-      // taskRequest.task_id = this.props.params.taskId;
       this.props.createOrder({order});
       hashHistory.push("/");
     }

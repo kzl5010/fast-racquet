@@ -49,7 +49,7 @@ class ThirdForm extends React.Component {
       console.log(token);
       if (response.status == 200) {
         console.log("Success");
-        that.stripe_paid = true;
+        this.stripe_paid = true;
       }
       // response.json();
     });
@@ -102,8 +102,8 @@ class ThirdForm extends React.Component {
         </InputGroup>
 
         <InputGroup>
-          <FormControl type="textarea" value={this.state.address} placeholder="Last Name" onChange={this.handleChange("address")} />
-          {/*<PlacesAutocomplete inputProps={inputProps} autocompleteItem={AutoCompleteItem}/>*/}
+          {/*<FormControl type="textarea" value={this.state.address} placeholder="Last Name" onChange={this.handleChange("address")} />*/}
+          <PlacesAutocomplete inputProps={inputProps} autocompleteItem={AutoCompleteItem}/>
 
         </InputGroup>
         <div className='third-form'>
@@ -112,9 +112,10 @@ class ThirdForm extends React.Component {
           <p>Tension <br/><strong>{this.props.tension}</strong></p>
           <p>Place <br/><strong>{this.props.address}</strong></p>
           <p>Instruction <br/><strong>{this.props.instructions}</strong></p>
-          <Button disabled={!this.stripe_paid} className='submit' type="submit" value="Confirm & Book"/>
+          <Button className='submit' type="submit" value="Confirm & Book"/>
         </div>
         {stripe}
+        {place_order}
 
       </Grid>
       </form>
