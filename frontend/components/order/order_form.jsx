@@ -26,8 +26,8 @@ class OrderForm extends React.Component {
     this.state = {
       stage: 1,
       user_id: userID,
-      first_name: null,
-      last_name: null,
+      // first_name: null,
+      // last_name: null,
       total_price: total_price,
       form: {
         stringy_id: null,
@@ -40,6 +40,7 @@ class OrderForm extends React.Component {
         first_name: null,
         last_name: null,
         address: null,
+        zip_code: null,
       },
       errors: null
     };
@@ -109,7 +110,7 @@ class OrderForm extends React.Component {
       $('#3').addClass('stage-active');
     } else if (this.state.stage === 3 && this.thirdFormComplete()){
       // this.handleSubmit();
-      console.error(parser.parseLocation(this.state.form3.address));
+      const parsedAddress = parser.parseLocation(this.state.form3.address)
       let order = this.state;
       order.first_name = this.state.form3.first_name;
       order.last_name = this.state.form3.last_name;
@@ -118,10 +119,11 @@ class OrderForm extends React.Component {
       order.instructions = this.state.form2.instructions;
       order.price = this.state.total_price;
       order.details = this.state.form.details;
-      order.address_line_one = "Test";
-      order.city = "Test1";
-      order.state = "NJ";
-      order.zip_code = "Fake";
+      order.address_line_one = parsedAddress.number + " " + (parsedAddress.prefix || " ") + " " + parsedAddress.street
+        + " " + parsedAddress.type;
+      order.city = parsedAddress.city;
+      order.state = parsedAddress.state;
+      order.zip_code = this.state.form3.zip_code;
       this.props.createOrder({order});
       hashHistory.push("/");
     }
@@ -169,8 +171,6 @@ class OrderForm extends React.Component {
     order.city = "Test1";
     order.state = "NJ";
     order.zip_code = "Fake";
-    // console.log(taskRequest);
-    // taskRequest.task_id = this.props.params.taskId;
     this.props.createOrder({order});
     hashHistory.push("/");
   }
@@ -200,11 +200,6 @@ class OrderForm extends React.Component {
     if (this.state.form.stringy_id) {
       this.stringy_price = this.props.stringies[this.state.form.stringy_id-1].price;
     }
-    // if (this.props.stringies) {
-    //      stringies = this.props.stringies.map((stringy, i)=>(
-    //     <option key={i} value={stringy.id}>{stringy.description}</option>
-    //   ));
-    // }
 
     console.log(this.state.form.stringy_id);
 
@@ -219,7 +214,9 @@ class OrderForm extends React.Component {
       instructions={this.state.form2.instructions} tension={this.state.form2.tension} stringy_id={this.state.form.stringy_id}
       stringies={this.props.stringies} updateForm={ this.updateForm3 } />;
     }
-
+    const textStyle = {
+      fontSize: '2em',
+    };
     return (
       <section className="taskRequest-container">
         <SecondHeaderContainer />
@@ -228,9 +225,9 @@ class OrderForm extends React.Component {
         <nav className='stage-header'>
         <Grid>
           <Row className='show-grid'>
-            <Col lg={4} md={4} sm={4} id='1' className='text-center stage-active stage-items-group'>Pick your string </Col>
-            <Col lg={4} md={4} sm={4} className="text-center stage-items-group" id='2'>Set your tension</Col>
-            <Col lg={4} md={4} sm={4} className="text-center stage-items-group" id='3'> Place order</Col>
+            <Col style={textStyle} lg={4} md={4} sm={4} id='1' className='text-center stage-active stage-items-group'>Pick your string </Col>
+            <Col style={textStyle} lg={4} md={4} sm={4} className="text-center stage-items-group" id='2'>Set your tension</Col>
+            <Col style={textStyle} lg={4} md={4} sm={4} className="text-center stage-items-group" id='3'> Place order</Col>
           </Row>
         </Grid>
         </nav>

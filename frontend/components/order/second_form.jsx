@@ -42,20 +42,26 @@ class SecondForm extends React.Component {
   }
 
   render() {
+    const inputStyle = {
+      width: '25%',
+    };
+    const gridStyle = {
+      marginLeft: '10%',
+    };
       return (
         <form className="second-form" onSubmit={this.handleSubmit}>
           <Grid className="of1">
 
             <Row>
-              <Col lg={8} md={8}>
+              <Col lg={8} md={8} style={gridStyle}>
                 <h4>Choose a tension</h4>
-                <InputGroup>
+                <InputGroup style={inputStyle}>
                   <FormControl type="number" value={this.state.tension} placeholder="lbs"
                                onChange={this.handleChange("tension")} className=""
                                min="35.0" max="80.0" step="0.5"/>
                 </InputGroup>
                 <Col>Any special instructions?</Col>
-                <InputGroup>
+                <InputGroup style={inputStyle}>
                   <FormControl type="textarea" value={this.state.instructions} placeholder="Optional"
                                onChange={this.handleChange("instructions")}/>
                 </InputGroup>

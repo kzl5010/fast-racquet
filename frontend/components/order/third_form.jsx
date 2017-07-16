@@ -15,6 +15,7 @@ class ThirdForm extends React.Component {
       first_name: "",
       last_name: "",
       tension: this.props.tension,
+      zip_code: "",
       // stripe_paid: false,
     };
     this.onChange = (address) => this.setState({ address });
@@ -51,7 +52,6 @@ class ThirdForm extends React.Component {
         console.log("Success");
         this.stripe_paid = true;
       }
-      // response.json();
     });
   }
 
@@ -65,6 +65,9 @@ class ThirdForm extends React.Component {
 
 
   render() {
+    const gridStyle = {
+      marginLeft: '10%',
+    };
     const inputProps = {
       value: this.state.address,
       onChange: this.onChange,
@@ -91,7 +94,7 @@ class ThirdForm extends React.Component {
 
     return (
       <form  className="third-form" onSubmit={this.handleSubmit}>
-      <Grid className="request-details">
+      <Grid className="request-details" style={gridStyle}>
         <InputGroup>
           <FormControl type="textarea" value={this.state.first_name} placeholder="First Name"
                        onChange={this.handleChange("first_name")} className=""/>

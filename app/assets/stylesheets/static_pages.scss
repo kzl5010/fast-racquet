@@ -43,6 +43,7 @@
 }
 
 .jumbo-greeting {
+  height: 65vh;
   background-image: url(https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495416822/christopher-burns-2003211_pikrdl.jpg);
   background-size: cover;
   padding-top: 0px;
@@ -75,6 +76,7 @@ h1 {
 
 .stage-active {
   border-bottom: 1px solid darkblue;
+  color: orange;
   // font-family: "Proxima Semibold", Arial, Helvetica, sans-serif;
 }
 
