@@ -16,7 +16,7 @@ class ThirdForm extends React.Component {
       last_name: "",
       tension: this.props.tension,
       zip_code: "",
-      // stripe_paid: false,
+      stripe_paid: false,
     };
     this.onChange = (address) => this.setState({ address });
     this.handleChange = this.handleChange.bind(this);
@@ -50,7 +50,8 @@ class ThirdForm extends React.Component {
       console.log(token);
       if (response.status == 200) {
         console.log("Success");
-        this.stripe_paid = true;
+        that.setState({stripe_paid: true});
+        that.props.updateForm(that.state);
       }
     });
   }
@@ -65,6 +66,10 @@ class ThirdForm extends React.Component {
 
 
   render() {
+    this.price = (this.props.price + this.props.stringy_price);
+    if (this.props.firstBuy) {
+      this.price /= 2.00;
+    }
     const gridStyle = {
       marginLeft: '10%',
     };
@@ -77,7 +82,7 @@ class ThirdForm extends React.Component {
     if (this.state.address) {
       stripe = (<StripeCheckout
         token={this.onToken}
-        amount={Number(this.props.price)*100}
+        amount={Number(this.price)*100}
         currency="USD"
         name="Fast Racquet Inc."
         shippingAddress={false}
@@ -86,7 +91,7 @@ class ThirdForm extends React.Component {
         stripeKey="pk_test_L5srPMcfjPhbApU6CKVQs7lm"
       />);
     }
-    if (this.stripe_paid) {
+    if (this.state.stripe_paid) {
       console.error("WORKS");
       place_order = <Button className='submit' type="submit" value="Confirm & Book"/>;
     }
@@ -109,13 +114,17 @@ class ThirdForm extends React.Component {
           <PlacesAutocomplete inputProps={inputProps} autocompleteItem={AutoCompleteItem}/>
 
         </InputGroup>
+        <InputGroup>
+          <FormControl type="textarea" value={this.state.zip_code} placeholder="Zip Code"
+                       onChange={this.handleChange("zip_code")}/>
+        </InputGroup>
         <div className='third-form'>
           <h1> Are these details correct? </h1>
-          <p>Stringy{this.props.stringy_id}</p>
+          <p>Stringy{this.props.stringies[this.props.stringy_id-1].description}</p>
           <p>Tension <br/><strong>{this.props.tension}</strong></p>
           <p>Place <br/><strong>{this.props.address}</strong></p>
           <p>Instruction <br/><strong>{this.props.instructions}</strong></p>
-          <Button className='submit' type="submit" value="Confirm & Book"/>
+          {/*<Button disabled="" className='submit' type="submit" value="Confirm & Book"/>*/}
         </div>
         {stripe}
         {place_order}

@@ -20,14 +20,9 @@ class OrderForm extends React.Component {
       }
     }
     let total_price = 40.00;
-    if (this.firstBuy) {
-      total_price /= 2;
-    }
     this.state = {
       stage: 1,
       user_id: userID,
-      // first_name: null,
-      // last_name: null,
       total_price: total_price,
       form: {
         stringy_id: null,
@@ -41,6 +36,7 @@ class OrderForm extends React.Component {
         last_name: null,
         address: null,
         zip_code: null,
+        stripe_paid: false,
       },
       errors: null
     };
@@ -92,6 +88,10 @@ class OrderForm extends React.Component {
       this.missingFields.push("Please choose an address.");
       return null;
     }
+    if (!this.state.form3.stripe_paid) {
+      this.missingFields.push("Please choose an address.");
+      return null;
+    }
     return this.state.form3.address;
 
   }
@@ -117,9 +117,12 @@ class OrderForm extends React.Component {
       order.stringy_id = this.state.form.stringy_id;
       order.tension = this.state.form2.tension;
       order.instructions = this.state.form2.instructions;
-      order.price = this.state.total_price;
+      order.price = this.state.total_price + this.props.stringies[this.state.form.stringy_id-1].price;
+      if (this.firstBuy) {
+        order.price /= 2.00;
+      }
       order.details = this.state.form.details;
-      order.address_line_one = parsedAddress.number + " " + (parsedAddress.prefix || " ") + " " + parsedAddress.street
+      order.address_line_one = parsedAddress.number + " " + (parsedAddress.prefix || "") + parsedAddress.street
         + " " + parsedAddress.type;
       order.city = parsedAddress.city;
       order.state = parsedAddress.state;
@@ -212,7 +215,7 @@ class OrderForm extends React.Component {
     } else {
       stage = <ThirdForm nextStage={this.nextStage} price={this.state.total_price} submit={this.handleSubmit}
       instructions={this.state.form2.instructions} tension={this.state.form2.tension} stringy_id={this.state.form.stringy_id}
-      stringies={this.props.stringies} updateForm={ this.updateForm3 } />;
+      stringies={this.props.stringies} updateForm={ this.updateForm3 } stringy_price={this.stringy_price} firstBuy={this.firstBuy} />;
     }
     const textStyle = {
       fontSize: '2em',
