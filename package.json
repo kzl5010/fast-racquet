@@ -30,6 +30,7 @@
     "react-bootstrap": "^0.31.0",
     "react-datepicker": "^0.46.0",
     "react-dom": "^15.5.3",
+    "react-hot-loader": "^3.0.0-beta.7",
     "react-places-autocomplete": "^5.3.1",
     "react-redux": "^5.0.3",
     "react-router": "^2.0.0",

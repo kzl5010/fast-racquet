@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import LoginModalContainer from './login_modal_container';
 import SignupModalContainer from './signup_modal_container';
-import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Grid, Row } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 
 class Header extends React.Component {
   constructor(props){
@@ -19,7 +19,7 @@ class Header extends React.Component {
 
   loginGuest(e) {
     e.preventDefault();
-    const guest = { user: {email: "fakeaccount@gmail.com", password :"password"}}
+    const guest = { user: {email: "fakeaccount@gmail.com", password :"password"}};
     this.props.login(guest);
   }
 
@@ -45,10 +45,6 @@ class Header extends React.Component {
           <Button bsStyle="link" className="header-button header-link pull-right" onClick={this.handleClick}>Log Out</Button>
           </Col>
           </Row>
-        {//    <button className="header-button" onClick={logout}>Log Out</button>
-//        <li className="header-list-item"><Link to="/taskers">Taskers</Link></li>
-        }
-
         </div>
       );
     }
@@ -64,7 +60,6 @@ class Header extends React.Component {
           <Col lg={12} md={12} sm={12}>
           <Button bsStyle="link" className="header-button"><Link className="header-link" to="/">Home</Link>
           </Button>
-          <button className="header-button" onClick={this.loginGuest}>Guest</button>
           <Button bsStyle="link" className="header-button"><Link className="header-link" to="/refer">Refer a friend</Link>
           </Button>
           <Button bsStyle="link" className="header-button"><Link className="header-link" to="/about">About</Link>
@@ -72,10 +67,6 @@ class Header extends React.Component {
           <LoginModalContainer headertype="header-link"/>
           </Col>
           </Row>
-          {
-          //<SignupModalContainer />
-          }
-
         </div>
       );
     }
@@ -84,11 +75,6 @@ class Header extends React.Component {
       <header className="header">
         <nav className="header-nav">
           <section className="header-logo">
-{/*
-              <Link to="/">
-              <h3 className="logo-h3">Home</h3>
-            </Link>
-            */ }
           {Nav}
           </section>
         </nav>

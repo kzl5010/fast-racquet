@@ -95,7 +95,6 @@ class OrderForm extends React.Component {
     return this.state.form3.address;
 
   }
-  //TODO Why am i not using handlesubmit??
   nextStage(e) {
     e.preventDefault();
     if ((this.state.stage === 1) && this.formComplete()) {
@@ -117,7 +116,7 @@ class OrderForm extends React.Component {
       order.stringy_id = this.state.form.stringy_id;
       order.tension = this.state.form2.tension;
       order.instructions = this.state.form2.instructions;
-      order.price = this.state.total_price + this.props.stringies[this.state.form.stringy_id-1].price;
+      order.price = Number(this.state.total_price) + Number(this.props.stringies[this.state.form.stringy_id-1].price);
       if (this.firstBuy) {
         order.price /= 2.00;
       }
