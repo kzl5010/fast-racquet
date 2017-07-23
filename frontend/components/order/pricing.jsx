@@ -41,7 +41,7 @@ class PricingColumn extends React.Component {
           <div>String job<br/>$ 40.00</div>
           {show}
           {discount}
-        <div>Your total: ${total} </div>
+        <div>Your total: ${total.toFixed(2)} </div>
         </Col>
       </Row>);
 

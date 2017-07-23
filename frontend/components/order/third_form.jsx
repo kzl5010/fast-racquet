@@ -35,7 +35,7 @@ class ThirdForm extends React.Component {
   onToken(token) {
     let that = this;
     this.props.updateForm(this.state);
-    token.amount = Number(this.props.price);
+    token.amount = Number(this.price);
     console.log(JSON.stringify(token));
     fetch('/api/charges', {
       method: 'POST',
@@ -66,7 +66,7 @@ class ThirdForm extends React.Component {
 
 
   render() {
-    this.price = (this.props.price + this.props.stringy_price);
+    this.price = (Number(this.props.price) + Number(this.props.stringy_price));
     if (this.props.firstBuy) {
       this.price /= 2.00;
     }

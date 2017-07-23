@@ -49,10 +49,6 @@ class SecondHeader extends React.Component {
           </div>
           </Col>
           </Row>
-        {//    <button className="header-button" onClick={logout}>Log Out</button>
-//        <li className="header-list-item"><Link to="/taskers">Taskers</Link></li>
-        }
-
         </div>
       );
     }
@@ -68,7 +64,6 @@ class SecondHeader extends React.Component {
           <Col lg={12} md={12} sm={12}>
           <Button bsStyle="link" className="2h-button"><Link className="2h-link" to="/">Home</Link>
           </Button>
-          <button className="2h-button" onClick={this.loginGuest}>Guest</button>
           <Button bsStyle="link" className="2h-button"><Link className="2h-link" to="/refer">Refer a friend</Link>
           </Button>
           <Button bsStyle="link" className="2h-button"><Link className="2h-link" to="/about">About</Link>

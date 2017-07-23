@@ -16,12 +16,11 @@ class FirstForm extends React.Component {
     this.setEdit = this.setEdit.bind(this);
     this.setString = this.setString.bind(this);
     this.renderWhiteSpace = this.renderWhiteSpace.bind(this);
-    this.stringTypes = ["Synthetic gut", "Polyester", "Multifilament", "Hybrid", "Provide your own string"];
+    this.stringTypes = ["Synthetic gut", "Polyester", "Multifilament", "Provide your own string"];
     this.stringHeader = ["Value performance", "Durability & Playability", "Comfort, Power, & Fuel", "The best of all worlds", "You know best"];
     this.stringDescriptions = ["The best choice for most players. These strings are very playable and affordable.",
                               "Polys are commonly used by pros and advanced players who have aggressive swings.",
                               "Multifilaments are great for players with less aggressive swings who are looking for a soft feel.",
-                              "A hybrid usually blends a tougher string with a softer string to maximize durability and comfort.",
                               "Just send the string (40 feet) in with your racquet. We'll handle the rest."];
   }
 
@@ -43,9 +42,9 @@ class FirstForm extends React.Component {
     e.preventDefault();
     if (!e.target.className.includes("sb")) {
       this.setState({editing: e.target.id});
-      if (e.target.id == 4) {
-        this.props.updateForm({stringy_id: 13});
-        this.setState({stringy_id: 13})
+      if (e.target.id == 3) {
+        this.props.updateForm({stringy_id: 10});
+        this.setState({stringy_id: 10});
       }
     }
   }
@@ -58,7 +57,7 @@ class FirstForm extends React.Component {
 
   renderWhiteSpace(idx) {
     if (this.state.editing == idx) {
-      return (<div><br /> <br /> <br /> <br /></div>)
+      return (<div><br /> <br /> <br /> <br /></div>);
     }
   }
 
