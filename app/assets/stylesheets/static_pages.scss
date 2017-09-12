@@ -3,9 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .signup-button {
   padding: 0px;
+  padding-bottom: 5px;
+  border: none;
+  outline:none;
   color: darkorange;
   font-size: 20px;
 }
+
+button:focus {
+  outline:0;
+}
+
 
 .signup-promo {
   font-size: 20px;
