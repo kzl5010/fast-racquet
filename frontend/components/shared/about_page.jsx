@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, InputGroup, Image } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import SecondHeaderContainer from './second_header_container';
 
 class AboutPage extends React.Component {
@@ -14,7 +14,7 @@ class AboutPage extends React.Component {
         <div className="text-center">
         </div>
         <Col lg={12}>
-          <Row lg={12}> Designed and built by enthusiastic tennis players who want to make the
+          <Row lg={10}> Designed and built by enthusiastic tennis players who want to make the
           sport easier to play and more accessible for everyone. This project is currently in a suspended state pending changes
               to the marketplace.
           </Row>
