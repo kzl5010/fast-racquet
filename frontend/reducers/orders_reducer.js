@@ -35,4 +35,4 @@ const OrdersReducer = (state = { errors: [] }, action) => {
 
 };
 
-export default OrdersReducer
+export default OrdersReducer;

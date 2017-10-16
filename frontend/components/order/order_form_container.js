@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
   errors: state.orders.errors,
   stringies: state.stringies.stringies
-})
+});
 
 const mapDispatchToProps = dispatch => ({
   createOrder: order => dispatch(createOrder(order)),
