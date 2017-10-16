@@ -2,6 +2,11 @@
   "name": "fastracquet",
   "version": "1.0.0",
   "description": "== README",
+  "babel": {
+    "presets": [
+      "flow"
+    ]
+  },
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -48,7 +53,8 @@
     "npm": "4.5.0"
   },
   "scripts": {
-    "postinstall": "webpack"
+    "postinstall": "webpack",
+    "flow": "flow"
   },
   "eslintConfig": {
     "parserOptions": {
@@ -64,6 +70,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-flow": "^6.23.0"
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.57.3"
   }
 }
