@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
@@ -11,6 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-  window.store = store;
-  ReactDOM.render(<Root store={store}/>, document.getElementById("root"));
+  // window.store = store; TODO remove this? or only use for dev mode
+  const myRootEl = document && document.getElementById("root");
+  if (myRootEl) {
+    ReactDOM.render(<Root store={store}/>, myRootEl);
+  }
 });
