@@ -9,7 +9,7 @@ const StringiesReducer = (state = { errors: [] }, action) => {
   Object.freeze(state);
   switch(action.type){
     case RECEIVE_STRINGY:
-      const stringy = action.stringy
+      const stringy = action.stringy;
       return merge({}, state, {[stringy.id]: stringy});
     case RECEIVE_STRINGIES:
       return action.stringies;
