@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { login, signup } from '../../actions/session_actions';
-import SignupModal from './signup_modal';
+import SignupModal from './signup_modal.jsx';
 
 const mapStateToProps = ({session}) => ({
   currentUser: session.currentUser,

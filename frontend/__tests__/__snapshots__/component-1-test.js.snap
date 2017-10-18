@@ -1,0 +1,1895 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Welcome (Greeting) Welcomes users to the site 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Greeting />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Jumbotron
+          bsClass="jumbotron"
+          className="jumbo-greeting"
+          componentClass="div"
+        >
+          <Connect(Header) />
+          <Image
+            alt="logo"
+            bsClass="img"
+            circle={false}
+            className="logo-img center-block"
+            responsive={false}
+            rounded={false}
+            src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png"
+            thumbnail={false}
+          />
+          <PageHeader
+            bsClass="page-header"
+            className="text-center"
+          >
+            Quality string jobs to your door for $40.
+          </PageHeader>
+          <div
+            className="text-center"
+          >
+            <Button
+              active={false}
+              block={false}
+              bsClass="btn"
+              bsStyle="default"
+              className="order-button"
+              disabled={false}
+            >
+              <Link
+                onlyActiveOnIndex={false}
+                style={Object {}}
+                to="/order"
+              >
+                Get your racquet strung
+              </Link>
+            </Button>
+          </div>
+        </Jumbotron>,
+        <Grid
+          bsClass="container"
+          componentClass="div"
+          fluid={false}
+        >
+          <Col
+            bsClass="col"
+            className="text-center"
+            componentClass="div"
+          >
+            <PageHeader
+              bsClass="page-header"
+              className="welcome-instructions"
+            >
+              <small>
+                How it works
+              </small>
+            </PageHeader>
+          </Col>
+          <Row
+            bsClass="row"
+            className="show-grid"
+            componentClass="div"
+          >
+            <Col
+              bsClass="col"
+              componentClass="div"
+              lg={4}
+              md={4}
+            >
+              <div
+                className="text-center"
+              >
+                <i
+                  aria-hidden="true"
+                  className="fa fa-truck fa-5x imgstruction"
+                />
+              </div>
+              <div
+                className="content text-center"
+              >
+                <h3
+                  className="header-i text-center"
+                >
+                  Send us your racquet
+                </h3>
+                <p
+                  className="num-icon-content"
+                >
+                  Print out the packaging slip and mail your racquet to us. We pay for shipping!
+                </p>
+              </div>
+            </Col>
+            <Col
+              bsClass="col"
+              componentClass="div"
+              lg={4}
+              md={4}
+            >
+              <div
+                className="text-center"
+              >
+                <i
+                  aria-hidden="true"
+                  className="fa fa-bed fa-5x imgstruction"
+                />
+              </div>
+              <div
+                className="content text-center"
+              >
+                <h3
+                  className="header-i"
+                >
+                  Take a break
+                </h3>
+                <p
+                  className="num-icon-content"
+                >
+                  Sit tight while one of our industry leading technicians strings your racquet
+                </p>
+              </div>
+            </Col>
+            <Col
+              bsClass="col"
+              componentClass="div"
+              lg={4}
+              md={4}
+            >
+              <div
+                className="text-center"
+              >
+                <i
+                  aria-hidden="true"
+                  className="fa fa-dribbble fa-5x imgstruction"
+                />
+              </div>
+              <div
+                className="content text-center"
+              >
+                <h3
+                  className="header-i"
+                >
+                  Thwack!
+                </h3>
+                <p
+                  className="num-icon-content"
+                >
+                  Your freshly strung racquet will arrive in a few days, ready for the court
+                </p>
+              </div>
+            </Col>
+          </Row>
+        </Grid>,
+      ],
+      "className": "splash-div",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "bsClass": "jumbotron",
+          "children": Array [
+            <Connect(Header) />,
+            <Image
+              alt="logo"
+              bsClass="img"
+              circle={false}
+              className="logo-img center-block"
+              responsive={false}
+              rounded={false}
+              src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png"
+              thumbnail={false}
+            />,
+            <PageHeader
+              bsClass="page-header"
+              className="text-center"
+            >
+              Quality string jobs to your door for $40.
+            </PageHeader>,
+            <div
+              className="text-center"
+            >
+              <Button
+                active={false}
+                block={false}
+                bsClass="btn"
+                bsStyle="default"
+                className="order-button"
+                disabled={false}
+              >
+                <Link
+                  onlyActiveOnIndex={false}
+                  style={Object {}}
+                  to="/order"
+                >
+                  Get your racquet strung
+                </Link>
+              </Button>
+            </div>,
+          ],
+          "className": "jumbo-greeting",
+          "componentClass": "div",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "alt": "logo",
+              "bsClass": "img",
+              "circle": false,
+              "className": "logo-img center-block",
+              "responsive": false,
+              "rounded": false,
+              "src": "https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png",
+              "thumbnail": false,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "bsClass": "page-header",
+              "children": "Quality string jobs to your door for $40.",
+              "className": "text-center",
+            },
+            "ref": null,
+            "rendered": "Quality string jobs to your door for $40.",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": <Button
+                active={false}
+                block={false}
+                bsClass="btn"
+                bsStyle="default"
+                className="order-button"
+                disabled={false}
+              >
+                <Link
+                  onlyActiveOnIndex={false}
+                  style={Object {}}
+                  to="/order"
+                >
+                  Get your racquet strung
+                </Link>
+              </Button>,
+              "className": "text-center",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "active": false,
+                "block": false,
+                "bsClass": "btn",
+                "bsStyle": "default",
+                "children": <Link
+                  onlyActiveOnIndex={false}
+                  style={Object {}}
+                  to="/order"
+                >
+                  Get your racquet strung
+                </Link>,
+                "className": "order-button",
+                "disabled": false,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Get your racquet strung",
+                  "onlyActiveOnIndex": false,
+                  "style": Object {},
+                  "to": "/order",
+                },
+                "ref": null,
+                "rendered": "Get your racquet strung",
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            "type": "div",
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "bsClass": "container",
+          "children": Array [
+            <Col
+              bsClass="col"
+              className="text-center"
+              componentClass="div"
+            >
+              <PageHeader
+                bsClass="page-header"
+                className="welcome-instructions"
+              >
+                <small>
+                  How it works
+                </small>
+              </PageHeader>
+            </Col>,
+            <Row
+              bsClass="row"
+              className="show-grid"
+              componentClass="div"
+            >
+              <Col
+                bsClass="col"
+                componentClass="div"
+                lg={4}
+                md={4}
+              >
+                <div
+                  className="text-center"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="fa fa-truck fa-5x imgstruction"
+                  />
+                </div>
+                <div
+                  className="content text-center"
+                >
+                  <h3
+                    className="header-i text-center"
+                  >
+                    Send us your racquet
+                  </h3>
+                  <p
+                    className="num-icon-content"
+                  >
+                    Print out the packaging slip and mail your racquet to us. We pay for shipping!
+                  </p>
+                </div>
+              </Col>
+              <Col
+                bsClass="col"
+                componentClass="div"
+                lg={4}
+                md={4}
+              >
+                <div
+                  className="text-center"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="fa fa-bed fa-5x imgstruction"
+                  />
+                </div>
+                <div
+                  className="content text-center"
+                >
+                  <h3
+                    className="header-i"
+                  >
+                    Take a break
+                  </h3>
+                  <p
+                    className="num-icon-content"
+                  >
+                    Sit tight while one of our industry leading technicians strings your racquet
+                  </p>
+                </div>
+              </Col>
+              <Col
+                bsClass="col"
+                componentClass="div"
+                lg={4}
+                md={4}
+              >
+                <div
+                  className="text-center"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="fa fa-dribbble fa-5x imgstruction"
+                  />
+                </div>
+                <div
+                  className="content text-center"
+                >
+                  <h3
+                    className="header-i"
+                  >
+                    Thwack!
+                  </h3>
+                  <p
+                    className="num-icon-content"
+                  >
+                    Your freshly strung racquet will arrive in a few days, ready for the court
+                  </p>
+                </div>
+              </Col>
+            </Row>,
+          ],
+          "componentClass": "div",
+          "fluid": false,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "bsClass": "col",
+              "children": <PageHeader
+                bsClass="page-header"
+                className="welcome-instructions"
+              >
+                <small>
+                  How it works
+                </small>
+              </PageHeader>,
+              "className": "text-center",
+              "componentClass": "div",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "bsClass": "page-header",
+                "children": <small>
+                  How it works
+                </small>,
+                "className": "welcome-instructions",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "How it works",
+                },
+                "ref": null,
+                "rendered": "How it works",
+                "type": "small",
+              },
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "bsClass": "row",
+              "children": Array [
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                  lg={4}
+                  md={4}
+                >
+                  <div
+                    className="text-center"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="fa fa-truck fa-5x imgstruction"
+                    />
+                  </div>
+                  <div
+                    className="content text-center"
+                  >
+                    <h3
+                      className="header-i text-center"
+                    >
+                      Send us your racquet
+                    </h3>
+                    <p
+                      className="num-icon-content"
+                    >
+                      Print out the packaging slip and mail your racquet to us. We pay for shipping!
+                    </p>
+                  </div>
+                </Col>,
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                  lg={4}
+                  md={4}
+                >
+                  <div
+                    className="text-center"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="fa fa-bed fa-5x imgstruction"
+                    />
+                  </div>
+                  <div
+                    className="content text-center"
+                  >
+                    <h3
+                      className="header-i"
+                    >
+                      Take a break
+                    </h3>
+                    <p
+                      className="num-icon-content"
+                    >
+                      Sit tight while one of our industry leading technicians strings your racquet
+                    </p>
+                  </div>
+                </Col>,
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                  lg={4}
+                  md={4}
+                >
+                  <div
+                    className="text-center"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="fa fa-dribbble fa-5x imgstruction"
+                    />
+                  </div>
+                  <div
+                    className="content text-center"
+                  >
+                    <h3
+                      className="header-i"
+                    >
+                      Thwack!
+                    </h3>
+                    <p
+                      className="num-icon-content"
+                    >
+                      Your freshly strung racquet will arrive in a few days, ready for the court
+                    </p>
+                  </div>
+                </Col>,
+              ],
+              "className": "show-grid",
+              "componentClass": "div",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "bsClass": "col",
+                  "children": Array [
+                    <div
+                      className="text-center"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="fa fa-truck fa-5x imgstruction"
+                      />
+                    </div>,
+                    <div
+                      className="content text-center"
+                    >
+                      <h3
+                        className="header-i text-center"
+                      >
+                        Send us your racquet
+                      </h3>
+                      <p
+                        className="num-icon-content"
+                      >
+                        Print out the packaging slip and mail your racquet to us. We pay for shipping!
+                      </p>
+                    </div>,
+                  ],
+                  "componentClass": "div",
+                  "lg": 4,
+                  "md": 4,
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <i
+                        aria-hidden="true"
+                        className="fa fa-truck fa-5x imgstruction"
+                      />,
+                      "className": "text-center",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "aria-hidden": "true",
+                        "className": "fa fa-truck fa-5x imgstruction",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "i",
+                    },
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <h3
+                          className="header-i text-center"
+                        >
+                          Send us your racquet
+                        </h3>,
+                        <p
+                          className="num-icon-content"
+                        >
+                          Print out the packaging slip and mail your racquet to us. We pay for shipping!
+                        </p>,
+                      ],
+                      "className": "content text-center",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Send us your racquet",
+                          "className": "header-i text-center",
+                        },
+                        "ref": null,
+                        "rendered": "Send us your racquet",
+                        "type": "h3",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Print out the packaging slip and mail your racquet to us. We pay for shipping!",
+                          "className": "num-icon-content",
+                        },
+                        "ref": null,
+                        "rendered": "Print out the packaging slip and mail your racquet to us. We pay for shipping!",
+                        "type": "p",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "bsClass": "col",
+                  "children": Array [
+                    <div
+                      className="text-center"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="fa fa-bed fa-5x imgstruction"
+                      />
+                    </div>,
+                    <div
+                      className="content text-center"
+                    >
+                      <h3
+                        className="header-i"
+                      >
+                        Take a break
+                      </h3>
+                      <p
+                        className="num-icon-content"
+                      >
+                        Sit tight while one of our industry leading technicians strings your racquet
+                      </p>
+                    </div>,
+                  ],
+                  "componentClass": "div",
+                  "lg": 4,
+                  "md": 4,
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <i
+                        aria-hidden="true"
+                        className="fa fa-bed fa-5x imgstruction"
+                      />,
+                      "className": "text-center",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "aria-hidden": "true",
+                        "className": "fa fa-bed fa-5x imgstruction",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "i",
+                    },
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <h3
+                          className="header-i"
+                        >
+                          Take a break
+                        </h3>,
+                        <p
+                          className="num-icon-content"
+                        >
+                          Sit tight while one of our industry leading technicians strings your racquet
+                        </p>,
+                      ],
+                      "className": "content text-center",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Take a break",
+                          "className": "header-i",
+                        },
+                        "ref": null,
+                        "rendered": "Take a break",
+                        "type": "h3",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Sit tight while one of our industry leading technicians strings your racquet",
+                          "className": "num-icon-content",
+                        },
+                        "ref": null,
+                        "rendered": "Sit tight while one of our industry leading technicians strings your racquet",
+                        "type": "p",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "bsClass": "col",
+                  "children": Array [
+                    <div
+                      className="text-center"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="fa fa-dribbble fa-5x imgstruction"
+                      />
+                    </div>,
+                    <div
+                      className="content text-center"
+                    >
+                      <h3
+                        className="header-i"
+                      >
+                        Thwack!
+                      </h3>
+                      <p
+                        className="num-icon-content"
+                      >
+                        Your freshly strung racquet will arrive in a few days, ready for the court
+                      </p>
+                    </div>,
+                  ],
+                  "componentClass": "div",
+                  "lg": 4,
+                  "md": 4,
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <i
+                        aria-hidden="true"
+                        className="fa fa-dribbble fa-5x imgstruction"
+                      />,
+                      "className": "text-center",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "aria-hidden": "true",
+                        "className": "fa fa-dribbble fa-5x imgstruction",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "i",
+                    },
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <h3
+                          className="header-i"
+                        >
+                          Thwack!
+                        </h3>,
+                        <p
+                          className="num-icon-content"
+                        >
+                          Your freshly strung racquet will arrive in a few days, ready for the court
+                        </p>,
+                      ],
+                      "className": "content text-center",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Thwack!",
+                          "className": "header-i",
+                        },
+                        "ref": null,
+                        "rendered": "Thwack!",
+                        "type": "h3",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Your freshly strung racquet will arrive in a few days, ready for the court",
+                          "className": "num-icon-content",
+                        },
+                        "ref": null,
+                        "rendered": "Your freshly strung racquet will arrive in a few days, ready for the court",
+                        "type": "p",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Jumbotron
+            bsClass="jumbotron"
+            className="jumbo-greeting"
+            componentClass="div"
+          >
+            <Connect(Header) />
+            <Image
+              alt="logo"
+              bsClass="img"
+              circle={false}
+              className="logo-img center-block"
+              responsive={false}
+              rounded={false}
+              src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png"
+              thumbnail={false}
+            />
+            <PageHeader
+              bsClass="page-header"
+              className="text-center"
+            >
+              Quality string jobs to your door for $40.
+            </PageHeader>
+            <div
+              className="text-center"
+            >
+              <Button
+                active={false}
+                block={false}
+                bsClass="btn"
+                bsStyle="default"
+                className="order-button"
+                disabled={false}
+              >
+                <Link
+                  onlyActiveOnIndex={false}
+                  style={Object {}}
+                  to="/order"
+                >
+                  Get your racquet strung
+                </Link>
+              </Button>
+            </div>
+          </Jumbotron>,
+          <Grid
+            bsClass="container"
+            componentClass="div"
+            fluid={false}
+          >
+            <Col
+              bsClass="col"
+              className="text-center"
+              componentClass="div"
+            >
+              <PageHeader
+                bsClass="page-header"
+                className="welcome-instructions"
+              >
+                <small>
+                  How it works
+                </small>
+              </PageHeader>
+            </Col>
+            <Row
+              bsClass="row"
+              className="show-grid"
+              componentClass="div"
+            >
+              <Col
+                bsClass="col"
+                componentClass="div"
+                lg={4}
+                md={4}
+              >
+                <div
+                  className="text-center"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="fa fa-truck fa-5x imgstruction"
+                  />
+                </div>
+                <div
+                  className="content text-center"
+                >
+                  <h3
+                    className="header-i text-center"
+                  >
+                    Send us your racquet
+                  </h3>
+                  <p
+                    className="num-icon-content"
+                  >
+                    Print out the packaging slip and mail your racquet to us. We pay for shipping!
+                  </p>
+                </div>
+              </Col>
+              <Col
+                bsClass="col"
+                componentClass="div"
+                lg={4}
+                md={4}
+              >
+                <div
+                  className="text-center"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="fa fa-bed fa-5x imgstruction"
+                  />
+                </div>
+                <div
+                  className="content text-center"
+                >
+                  <h3
+                    className="header-i"
+                  >
+                    Take a break
+                  </h3>
+                  <p
+                    className="num-icon-content"
+                  >
+                    Sit tight while one of our industry leading technicians strings your racquet
+                  </p>
+                </div>
+              </Col>
+              <Col
+                bsClass="col"
+                componentClass="div"
+                lg={4}
+                md={4}
+              >
+                <div
+                  className="text-center"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="fa fa-dribbble fa-5x imgstruction"
+                  />
+                </div>
+                <div
+                  className="content text-center"
+                >
+                  <h3
+                    className="header-i"
+                  >
+                    Thwack!
+                  </h3>
+                  <p
+                    className="num-icon-content"
+                  >
+                    Your freshly strung racquet will arrive in a few days, ready for the court
+                  </p>
+                </div>
+              </Col>
+            </Row>
+          </Grid>,
+        ],
+        "className": "splash-div",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "bsClass": "jumbotron",
+            "children": Array [
+              <Connect(Header) />,
+              <Image
+                alt="logo"
+                bsClass="img"
+                circle={false}
+                className="logo-img center-block"
+                responsive={false}
+                rounded={false}
+                src="https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png"
+                thumbnail={false}
+              />,
+              <PageHeader
+                bsClass="page-header"
+                className="text-center"
+              >
+                Quality string jobs to your door for $40.
+              </PageHeader>,
+              <div
+                className="text-center"
+              >
+                <Button
+                  active={false}
+                  block={false}
+                  bsClass="btn"
+                  bsStyle="default"
+                  className="order-button"
+                  disabled={false}
+                >
+                  <Link
+                    onlyActiveOnIndex={false}
+                    style={Object {}}
+                    to="/order"
+                  >
+                    Get your racquet strung
+                  </Link>
+                </Button>
+              </div>,
+            ],
+            "className": "jumbo-greeting",
+            "componentClass": "div",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "alt": "logo",
+                "bsClass": "img",
+                "circle": false,
+                "className": "logo-img center-block",
+                "responsive": false,
+                "rounded": false,
+                "src": "https://res.cloudinary.com/dsaxhw9ii/image/upload/v1495010116/Logomakr_0lSyvU_j6ldwz.png",
+                "thumbnail": false,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "bsClass": "page-header",
+                "children": "Quality string jobs to your door for $40.",
+                "className": "text-center",
+              },
+              "ref": null,
+              "rendered": "Quality string jobs to your door for $40.",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Button
+                  active={false}
+                  block={false}
+                  bsClass="btn"
+                  bsStyle="default"
+                  className="order-button"
+                  disabled={false}
+                >
+                  <Link
+                    onlyActiveOnIndex={false}
+                    style={Object {}}
+                    to="/order"
+                  >
+                    Get your racquet strung
+                  </Link>
+                </Button>,
+                "className": "text-center",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "active": false,
+                  "block": false,
+                  "bsClass": "btn",
+                  "bsStyle": "default",
+                  "children": <Link
+                    onlyActiveOnIndex={false}
+                    style={Object {}}
+                    to="/order"
+                  >
+                    Get your racquet strung
+                  </Link>,
+                  "className": "order-button",
+                  "disabled": false,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Get your racquet strung",
+                    "onlyActiveOnIndex": false,
+                    "style": Object {},
+                    "to": "/order",
+                  },
+                  "ref": null,
+                  "rendered": "Get your racquet strung",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              "type": "div",
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "bsClass": "container",
+            "children": Array [
+              <Col
+                bsClass="col"
+                className="text-center"
+                componentClass="div"
+              >
+                <PageHeader
+                  bsClass="page-header"
+                  className="welcome-instructions"
+                >
+                  <small>
+                    How it works
+                  </small>
+                </PageHeader>
+              </Col>,
+              <Row
+                bsClass="row"
+                className="show-grid"
+                componentClass="div"
+              >
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                  lg={4}
+                  md={4}
+                >
+                  <div
+                    className="text-center"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="fa fa-truck fa-5x imgstruction"
+                    />
+                  </div>
+                  <div
+                    className="content text-center"
+                  >
+                    <h3
+                      className="header-i text-center"
+                    >
+                      Send us your racquet
+                    </h3>
+                    <p
+                      className="num-icon-content"
+                    >
+                      Print out the packaging slip and mail your racquet to us. We pay for shipping!
+                    </p>
+                  </div>
+                </Col>
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                  lg={4}
+                  md={4}
+                >
+                  <div
+                    className="text-center"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="fa fa-bed fa-5x imgstruction"
+                    />
+                  </div>
+                  <div
+                    className="content text-center"
+                  >
+                    <h3
+                      className="header-i"
+                    >
+                      Take a break
+                    </h3>
+                    <p
+                      className="num-icon-content"
+                    >
+                      Sit tight while one of our industry leading technicians strings your racquet
+                    </p>
+                  </div>
+                </Col>
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                  lg={4}
+                  md={4}
+                >
+                  <div
+                    className="text-center"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="fa fa-dribbble fa-5x imgstruction"
+                    />
+                  </div>
+                  <div
+                    className="content text-center"
+                  >
+                    <h3
+                      className="header-i"
+                    >
+                      Thwack!
+                    </h3>
+                    <p
+                      className="num-icon-content"
+                    >
+                      Your freshly strung racquet will arrive in a few days, ready for the court
+                    </p>
+                  </div>
+                </Col>
+              </Row>,
+            ],
+            "componentClass": "div",
+            "fluid": false,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "bsClass": "col",
+                "children": <PageHeader
+                  bsClass="page-header"
+                  className="welcome-instructions"
+                >
+                  <small>
+                    How it works
+                  </small>
+                </PageHeader>,
+                "className": "text-center",
+                "componentClass": "div",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "bsClass": "page-header",
+                  "children": <small>
+                    How it works
+                  </small>,
+                  "className": "welcome-instructions",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "How it works",
+                  },
+                  "ref": null,
+                  "rendered": "How it works",
+                  "type": "small",
+                },
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "bsClass": "row",
+                "children": Array [
+                  <Col
+                    bsClass="col"
+                    componentClass="div"
+                    lg={4}
+                    md={4}
+                  >
+                    <div
+                      className="text-center"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="fa fa-truck fa-5x imgstruction"
+                      />
+                    </div>
+                    <div
+                      className="content text-center"
+                    >
+                      <h3
+                        className="header-i text-center"
+                      >
+                        Send us your racquet
+                      </h3>
+                      <p
+                        className="num-icon-content"
+                      >
+                        Print out the packaging slip and mail your racquet to us. We pay for shipping!
+                      </p>
+                    </div>
+                  </Col>,
+                  <Col
+                    bsClass="col"
+                    componentClass="div"
+                    lg={4}
+                    md={4}
+                  >
+                    <div
+                      className="text-center"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="fa fa-bed fa-5x imgstruction"
+                      />
+                    </div>
+                    <div
+                      className="content text-center"
+                    >
+                      <h3
+                        className="header-i"
+                      >
+                        Take a break
+                      </h3>
+                      <p
+                        className="num-icon-content"
+                      >
+                        Sit tight while one of our industry leading technicians strings your racquet
+                      </p>
+                    </div>
+                  </Col>,
+                  <Col
+                    bsClass="col"
+                    componentClass="div"
+                    lg={4}
+                    md={4}
+                  >
+                    <div
+                      className="text-center"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="fa fa-dribbble fa-5x imgstruction"
+                      />
+                    </div>
+                    <div
+                      className="content text-center"
+                    >
+                      <h3
+                        className="header-i"
+                      >
+                        Thwack!
+                      </h3>
+                      <p
+                        className="num-icon-content"
+                      >
+                        Your freshly strung racquet will arrive in a few days, ready for the court
+                      </p>
+                    </div>
+                  </Col>,
+                ],
+                "className": "show-grid",
+                "componentClass": "div",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "class",
+                  "props": Object {
+                    "bsClass": "col",
+                    "children": Array [
+                      <div
+                        className="text-center"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="fa fa-truck fa-5x imgstruction"
+                        />
+                      </div>,
+                      <div
+                        className="content text-center"
+                      >
+                        <h3
+                          className="header-i text-center"
+                        >
+                          Send us your racquet
+                        </h3>
+                        <p
+                          className="num-icon-content"
+                        >
+                          Print out the packaging slip and mail your racquet to us. We pay for shipping!
+                        </p>
+                      </div>,
+                    ],
+                    "componentClass": "div",
+                    "lg": 4,
+                    "md": 4,
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <i
+                          aria-hidden="true"
+                          className="fa fa-truck fa-5x imgstruction"
+                        />,
+                        "className": "text-center",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "aria-hidden": "true",
+                          "className": "fa fa-truck fa-5x imgstruction",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <h3
+                            className="header-i text-center"
+                          >
+                            Send us your racquet
+                          </h3>,
+                          <p
+                            className="num-icon-content"
+                          >
+                            Print out the packaging slip and mail your racquet to us. We pay for shipping!
+                          </p>,
+                        ],
+                        "className": "content text-center",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Send us your racquet",
+                            "className": "header-i text-center",
+                          },
+                          "ref": null,
+                          "rendered": "Send us your racquet",
+                          "type": "h3",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Print out the packaging slip and mail your racquet to us. We pay for shipping!",
+                            "className": "num-icon-content",
+                          },
+                          "ref": null,
+                          "rendered": "Print out the packaging slip and mail your racquet to us. We pay for shipping!",
+                          "type": "p",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "class",
+                  "props": Object {
+                    "bsClass": "col",
+                    "children": Array [
+                      <div
+                        className="text-center"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="fa fa-bed fa-5x imgstruction"
+                        />
+                      </div>,
+                      <div
+                        className="content text-center"
+                      >
+                        <h3
+                          className="header-i"
+                        >
+                          Take a break
+                        </h3>
+                        <p
+                          className="num-icon-content"
+                        >
+                          Sit tight while one of our industry leading technicians strings your racquet
+                        </p>
+                      </div>,
+                    ],
+                    "componentClass": "div",
+                    "lg": 4,
+                    "md": 4,
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <i
+                          aria-hidden="true"
+                          className="fa fa-bed fa-5x imgstruction"
+                        />,
+                        "className": "text-center",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "aria-hidden": "true",
+                          "className": "fa fa-bed fa-5x imgstruction",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <h3
+                            className="header-i"
+                          >
+                            Take a break
+                          </h3>,
+                          <p
+                            className="num-icon-content"
+                          >
+                            Sit tight while one of our industry leading technicians strings your racquet
+                          </p>,
+                        ],
+                        "className": "content text-center",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Take a break",
+                            "className": "header-i",
+                          },
+                          "ref": null,
+                          "rendered": "Take a break",
+                          "type": "h3",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Sit tight while one of our industry leading technicians strings your racquet",
+                            "className": "num-icon-content",
+                          },
+                          "ref": null,
+                          "rendered": "Sit tight while one of our industry leading technicians strings your racquet",
+                          "type": "p",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "class",
+                  "props": Object {
+                    "bsClass": "col",
+                    "children": Array [
+                      <div
+                        className="text-center"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="fa fa-dribbble fa-5x imgstruction"
+                        />
+                      </div>,
+                      <div
+                        className="content text-center"
+                      >
+                        <h3
+                          className="header-i"
+                        >
+                          Thwack!
+                        </h3>
+                        <p
+                          className="num-icon-content"
+                        >
+                          Your freshly strung racquet will arrive in a few days, ready for the court
+                        </p>
+                      </div>,
+                    ],
+                    "componentClass": "div",
+                    "lg": 4,
+                    "md": 4,
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <i
+                          aria-hidden="true"
+                          className="fa fa-dribbble fa-5x imgstruction"
+                        />,
+                        "className": "text-center",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "aria-hidden": "true",
+                          "className": "fa fa-dribbble fa-5x imgstruction",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <h3
+                            className="header-i"
+                          >
+                            Thwack!
+                          </h3>,
+                          <p
+                            className="num-icon-content"
+                          >
+                            Your freshly strung racquet will arrive in a few days, ready for the court
+                          </p>,
+                        ],
+                        "className": "content text-center",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Thwack!",
+                            "className": "header-i",
+                          },
+                          "ref": null,
+                          "rendered": "Thwack!",
+                          "type": "h3",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Your freshly strung racquet will arrive in a few days, ready for the court",
+                            "className": "num-icon-content",
+                          },
+                          "ref": null,
+                          "rendered": "Your freshly strung racquet will arrive in a few days, ready for the court",
+                          "type": "p",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                  ],
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

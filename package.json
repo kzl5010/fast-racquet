@@ -5,6 +5,32 @@
   "babel": {
     "presets": [
       "flow"
+    ],
+    "env": {
+      "test": {
+        "presets": [
+          [
+            "es2015",
+            {
+              "modules": false
+            }
+          ],
+          "react"
+        ],
+        "plugins": [
+          "transform-es2015-modules-commonjs"
+        ]
+      }
+    }
+  },
+  "jest": {
+    "transform": {
+      ".*": "./node_modules/babel-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "es6"
     ]
   },
   "main": "index.js",
@@ -53,7 +79,8 @@
   },
   "scripts": {
     "postinstall": "webpack",
-    "flow": "flow"
+    "flow": "flow",
+    "test": "jest"
   },
   "eslintConfig": {
     "parserOptions": {
@@ -70,9 +97,14 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.1",
+    "babel-jest": "^21.2.0",
     "babel-preset-flow": "^6.23.0",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-15": "^1.0.2",
     "eslint": "^4.9.0",
     "eslint-plugin-flowtype": "^2.39.1",
-    "flow-bin": "^0.57.3"
+    "flow-bin": "^0.57.3",
+    "jest": "^21.2.1",
+    "react-test-renderer": "^15.5.4"
   }
 }
