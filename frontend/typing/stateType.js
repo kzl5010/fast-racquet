@@ -1,13 +1,12 @@
 // @flow
 
-type StateType = {
-    +currentUser: {
+export type StateType = {
+    +currentUser?: {
 
     },
-    stringies: Array<{
-
-    }>,
+    stringies?: Array<{
+        id: number,
+        description: string
+    }>
 
 };
-
-export default StateType;
