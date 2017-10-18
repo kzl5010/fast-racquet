@@ -25,6 +25,7 @@ describe('Welcome (Greeting)', ()=> {
         const component1 = shallow(<Greeting currentUser={currentUser} />);
         // console.log(component1.instance().props);
         // console.log(currentUser === component1.instance().props.currentUser);
+        expect(component1.instance().props.currentUser).toBeDefined();
         expect(component1.instance().props.currentUser).toEqual(currentUser);
     });
 });
