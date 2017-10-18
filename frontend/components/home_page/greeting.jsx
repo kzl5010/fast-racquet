@@ -9,7 +9,7 @@ class Greeting extends React.Component {
   constructor(props){
     super(props);
     // console.log(this.props.currentUser);
-    console.log(this.props);
+    // console.log(this.props);
     // this.state = {
     //   user: this.props.currentUser
     // }
@@ -20,9 +20,9 @@ class Greeting extends React.Component {
 
   loginGuest(e) {
     e.preventDefault();
-    const guest = {email: "fakeaccount@gmail.com", password :"password"}
+    const guest = {email: "fakeaccount@gmail.com", password :"password"};
     this.props.login({user: guest});
-    console.log({guest});
+    // console.log({guest});
   }
 
   render() {
