@@ -12,7 +12,7 @@ const StringiesReducer = (state = { errors: [] }, action) => {
       const stringy = action.stringy;
       return merge({}, state, {[stringy.id]: stringy});
     case RECEIVE_STRINGIES:
-      return action.stringies;
+      return merge({}, state, action.stringies); // TODO test this
     // case REMOVE_STRINGYER:
     //   let newState = merge({}, state);
     //   delete newState[action.stringyRequest.id];

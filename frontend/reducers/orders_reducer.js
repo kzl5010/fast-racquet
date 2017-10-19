@@ -10,7 +10,7 @@ const OrdersReducer = (state = { errors: [] }, action) => {
   Object.freeze(state);
   switch(action.type){
     case RECEIVE_ORDER:
-      const order = action.order
+      const order = action.order;
       return merge({}, state, {[order.id]: order});
     case RECEIVE_ORDERS:
       return action.orders;
