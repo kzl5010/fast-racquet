@@ -23,7 +23,7 @@ const Root = ({ store }) => {
     if (currentUser) {
       replace('/account');
     }
-  }
+  };
 
 
   return (
