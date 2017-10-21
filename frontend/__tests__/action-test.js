@@ -22,7 +22,8 @@ describe('MapStateToProps', () => {
 
   it('It doesn\'t map unwanted props', () => {
     let initialState = {
-      oop: 'baboop'
+      oop: 'baboop',
+      bimibap: 'bowl',
     }
     expect(mapStateToProps(initialState)).toEqual({})
   })

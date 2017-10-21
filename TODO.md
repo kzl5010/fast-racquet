@@ -8,3 +8,4 @@ clean up store,
 google maps integration?
 fix ordering button
 migrate backend to node / mongo? (optional).
+http://jsfiddle.net/6rszsr5g/3/
