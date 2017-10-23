@@ -9,3 +9,4 @@ google maps integration?
 fix ordering button
 migrate backend to node / mongo? (optional).
 http://jsfiddle.net/6rszsr5g/3/
+Tests: mapstatetoprops, reducer, component. What else (mapdispatch to props?, redux thunk maybe?)
