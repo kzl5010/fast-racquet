@@ -45,7 +45,7 @@ class Greeting extends React.Component {
         alt="logo" className="logo-img center-block"/>
           <PageHeader className="text-center">Quality string jobs to your door for $40 {this.props.currentUser.first_name}!</PageHeader>
           <div className="text-center">
-          <Button className="order-button"><Link to="/order">Get your racquet strung</Link></Button>
+          <Link to="/order"><Button className="order-button">Get your racquet strung</Button></Link>
           </div>
           </Jumbotron>
           <Grid>

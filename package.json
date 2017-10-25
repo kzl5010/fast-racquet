@@ -29,6 +29,7 @@
     },
     "moduleFileExtensions": [
       "js",
+      "jsx",
       "json",
       "es6"
     ]

@@ -4,10 +4,12 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import SessionFormContainer from './session_form/session_form_container';
 import GreetingContainer from './home_page/greeting_container';
-import OrderFormContainer from './order/order_form_container';
+import { connectedOrderFormContainer } from './order/order_form_container';
 import AboutPage from './shared/about_page';
 
 import App from './app';
+
+const OrderFormContainer = connectedOrderFormContainer;
 
 const Root = ({ store }) => {
 

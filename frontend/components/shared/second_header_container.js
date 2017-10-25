@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import { login, logout } from '../../actions/session_actions';
-import SecondHeader from './second_header';
+import SecondHeader from './second_header.jsx';
 
 const mapStateToProps = ({session}) => ({
   currentUser: session.currentUser

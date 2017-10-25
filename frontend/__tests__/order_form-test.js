@@ -1,18 +1,15 @@
-import ordersReducer from '../reducers/orders_reducer';
 
 let initialState = {};
 
-const mapStateToProps = (state, ownProps) => ({
-  currentUser: state.session.currentUser,
-  errors: state.orders.errors,
-  stringies: state.stringies.stringies
-});
+import { mapStateToProps } from '../components/order/order_form_container';
 
 describe('Order Container MapStateToProps', ()=> {
    it('doesn\'t do anything for unrelated actions', () => {
      let finalState = ordersReducer(initialState, { type: "COOLIO"});
      expect(finalState).toEqual(initialState);
    });
+
+   console.log(mapStateToProps);
 
    it('updates the store on an action', () => {
      let order = { id: 5, tv_show: "blainer" };

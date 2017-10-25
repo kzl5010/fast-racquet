@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-  // window.store = store; TODO remove this? or only use for dev mode
+  window.store = store; // TODO remove this? or only use for dev mode
   const myRootEl = document && document.getElementById("root");
   if (myRootEl) {
     ReactDOM.render(<Root store={store}/>, myRootEl);
