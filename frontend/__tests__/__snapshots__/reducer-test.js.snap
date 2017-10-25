@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Orders Reducer updated state matches snapshot 1`] = `
+Object {
+  "5": Object {
+    "id": 5,
+    "tv_show": "blainer",
+  },
+}
+`;
