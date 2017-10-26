@@ -4,7 +4,7 @@ import { Modal, Button, Tooltip, Col, FormGroup, FormControl, Clearfix, Row, Inp
 class SignupModal extends React.Component {
   constructor(props){
     super(props);
-    this.state = { email: "", password: "", first_name: "", last_name: "", first_buy: "true", showModal: false};
+    this.state = { email: "", password: "", first_name: "", last_name: "", first_buy: true, showModal: false };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.open = this.open.bind(this);
