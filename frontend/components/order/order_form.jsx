@@ -12,7 +12,7 @@ class OrderForm extends React.Component {
   constructor(props) {
     super(props);
     let userID = null;
-    this.firstBuy = false
+    this.firstBuy = false;
     if (this.props.currentUser) {
       userID = this.props.currentUser.id;
       if (this.props.currentUser.first_buy) {

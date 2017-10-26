@@ -9,17 +9,11 @@ type StateType = {
 };
 
 
-const selectCurrentUser = (state: StateType): UserType => {
+const selectCurrentUser = (state: StateType): UserType | void => {
   if (state.session && state.session.currentUser) {
     return state.session.currentUser;
   } else {
-    return {
-      email: "",
-      first_buy: false,
-      first_name: "Guest",
-      id: 20000,
-      last_name: "Dummy",
-    };
+    return undefined;
   }
 };
 
