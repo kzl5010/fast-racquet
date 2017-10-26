@@ -1,19 +1,26 @@
 // @flow
+
+import type { UserType } from '../typing/userType';
+
 type StateType = {
   session: {
     currentUser: UserType
   }
 };
 
-type UserType = {
-  email: string,
-  first_buy: boolean,
-  first_name: string,
-  id: number,
-  last_name: string,
-};
 
 const selectCurrentUser = (state: StateType): UserType => {
-
-  return state.session.currentUser;
+  if (state.session && state.session.currentUser) {
+    return state.session.currentUser;
+  } else {
+    return {
+      email: "",
+      first_buy: false,
+      first_name: "Guest",
+      id: 20000,
+      last_name: "Dummy",
+    };
+  }
 };
+
+export default selectCurrentUser;
