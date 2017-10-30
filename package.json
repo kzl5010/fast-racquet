@@ -107,6 +107,7 @@
     "flow-bin": "^0.57.3",
     "jest": "^21.2.1",
     "react-test-renderer": "^15.5.4",
+    "redux-devtools-extension": "^2.13.2",
     "remote-redux-devtools": "^0.5.12"
   }
 }
